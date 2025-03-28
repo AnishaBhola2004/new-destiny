@@ -1,0 +1,919 @@
+body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #ffedcc;
+            height: auto; /* Full viewport height */
+            position: relative;
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        header h1 {
+            font-size: 4rem;
+            color: #000;
+            margin: 0;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 20%; /* Align with logo */
+        }
+
+        header h2 {
+            font-size: 3rem;
+            color: #000;
+            margin: 10px 0;
+            font-weight: normal;
+            text-align: left;
+            margin-left: 20%; /* Align with logo */
+            display: inline-block; /* Make h2 inline with logo */
+            vertical-align: middle; /* Align vertically with logo */
+        }
+
+        header img.Logo {
+            width: 100px; /* Adjust logo size */
+            height: auto;
+            display: inline-block; /* Make logo inline with h2 */
+            vertical-align: middle; /* Align vertically with h2 */
+            margin-left: 10px; /* Space between h2 and logo */
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        header img.Logo:hover {
+            transform: scale(1.1); /* Slightly enlarge the logo on hover */
+            filter: brightness(1.2); /* Increase brightness on hover */
+        }
+
+        header button {
+            background: linear-gradient(45deg, #ffa500, #ff4500);
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            margin-top: 30px;
+            color: #ffedcc;
+            display: block;
+            /*margin-left: 20%; /* Align with logo */
+        }
+
+        header button:hover {
+            background: linear-gradient(45deg, #55a630, #55a630);
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.3);
+            color: #ffa500;
+            border-color: #ffa500;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Space between images */
+            margin-top: 20px;
+        }
+
+        .image-grid img {
+            width: 150px; /* Adjust image size */
+            height: 150px;
+            border-radius: 50%; /* Circular images */
+            object-fit: cover; /* Ensure images fit properly */
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        /* Main Content */
+main {
+    flex: 1; /* Ensure main content takes up remaining space */
+    padding: 20px;
+}
+
+section {
+    padding: 20px;
+    background-color: #fff; /* White background for the rest of the page */
+    color: #000; /* Black text for readability */
+    margin-left: 30px;
+    display: flex;
+}
+
+/* Adjust the size of IMG1 */
+.IMG11 {
+    width: 100%; /* Adjust as needed */
+    max-width: 500px; /* Adjust as needed */
+    height: 550px; /* Fixed height */
+    display: block;
+    margin: 20px auto; /* Center the image */
+    border-radius: 20px; /* Rounded corners */
+    border: 4px solid #ffffff; /* White border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    transition: all 0.4s ease-in-out; /* Smooth transition for hover effects */
+    cursor: pointer; /* Indicates the image is interactive */
+}
+
+/* Hover Effects */
+.IMG11:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+    border-color: #ffa500; /* Change border color on hover */
+    filter: brightness(1.1); /* Slightly increase brightness */
+}
+
+/* Adjust the heading content */
+.heading-content h1 {
+    font-size: 3rem; /* Adjust as needed */
+    color: #ffa500;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust as needed */
+    padding-top: 20px; /* Adjust as needed */
+}
+
+coverage-section p {
+    color: #55a630; /* Green shade */
+    font-size: 1rem; /* Reduced font size */
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.6; /* Better readability */
+}
+
+/* Cards Section */
+.coverage-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduced gap for better spacing */
+    flex-wrap: wrap;
+}
+
+/* Card Styling */
+.card {
+    background: #ffffff;
+    border-radius: 20px; /* Reduced border radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 30px 20px; /* Reduced padding */
+    text-align: center;
+    flex: 1 1 calc(33.33% - 40px); /* Ensure 3 cards per row */
+    min-width: 180px; /* Reduced minimum width */
+    max-width: 220px; /* Reduced max width */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    cursor: pointer;
+}* Section Styling */
+.section-two {
+    margin: 40px; /* Center the box and add vertical spacing */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #ffedcc;
+    border-radius: 50px; /* Rounded corners for outer box */
+    max-width: 1100px; /* Reduced box size */
+    overflow: hidden; /* Ensure rounded corners apply */
+}
+
+/* Coverage Section */
+.coverage-section {
+    text-align: center;
+    padding: 80px 20px; /* Reduced padding */
+    position: relative;
+    overflow: hidden; /* Ensure content does not overflow */
+    background: #ffedcc;
+    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+}
+
+/* Wave-like Background Shape */
+.coverage-section::before {
+    content: '';
+    position: absolute;
+    top: -60px; /* Reduced wave height */
+    left: 0;
+    right: 0;
+    height: 100%; /* Reduced height */
+    background: #ffedcc; /* Blue shade */
+    border-radius: 0 0 50% 50%;
+    z-index: -1;
+    transform: scaleX(1.5); /* Wider wave effect */
+}
+
+/* Headings and Paragraph */
+.coverage-section h2 {
+    font-size: 4.5rem; 
+    color: #ffa500; 
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1.2px; /* More stylish look */
+}
+
+
+/* Hover Effect for Cards */
+.card:hover {
+    transform: translateY(-8px) rotate(1deg); /* Reduced tilt */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card img {
+    width: 50px; /* Reduced image size */
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Card Title */
+.card h3 {
+    font-size: 1.1rem; /* Reduced font size */
+    color: #ffa500;
+    margin-top: 8px;
+}
+
+/* Call-to-Action Button */
+.get-covered-btn {
+    background: linear-gradient(45deg, #ffa500, #ff4500);
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: auto;
+    margin-top: 20px;
+    color: #ffedcc;
+    z-index: 1; /* Ensure button is above the video */
+}
+
+/* Hover Effect for Button */
+.get-covered-btn:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.3);
+    color: #ffa500;
+    border-color: #ffa500;
+}
+
+/* Modal Styling */
+.modal-Get-Covered {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    overflow: auto;
+}
+
+.modal-content-Get-Covered {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close-btn-Get-Covered {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn-Get-Covered:hover {
+    color: #000;
+}
+
+.modal-content-Get-Covered h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-content-Get-Covered p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.modal-content-Get-Covered ul {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.modal-content-Get-Covered ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.modal-content-Get-Covered .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content-Get-Covered .btn:hover {
+    background-color: #0056b3;
+}
+
+article {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 20px;
+}
+
+.Considerations {
+    background-color: #ffedcc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.Travel-container h1 {
+    color: #ffa500;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: larger;
+}
+
+.Travel-container h2 {
+    color: #ffa500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.Travel-container p {
+    color: #55a630;
+}
+
+.Travel-factor {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 5px solid #ffa500;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.Travel-factor h3 {
+    color: #444;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.Travel-factor h3 i {
+    margin-right: 10px;
+    color: #55a630;
+}
+
+.Travel-factor p {
+    margin-left: 35px;
+}
+
+.Travel-factor:hover {
+    background-color: #ffedcc;
+    border-left-color: #ff4500;
+}
+
+
+.Package {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    flex: 1;
+    overflow: hidden; /* Ensure no overflow */
+    clear: both; /* Clear any floating elements */
+}
+
+.Plan {
+    display: flex;
+    gap: 6px;
+
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffa500;
+    margin: 2rem 0;
+}
+
+.Plan span {
+    padding: 8px; /* Optional: Add padding for better spacing */
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.Plan span:nth-child(1) { background-color: #ffedcc; }
+.Plan span:nth-child(2) { background-color: #ffedcc; }
+.Plan span:nth-child(3) { background-color: #ffedcc; }
+.Plan span:nth-child(4) { background-color: #ffedcc; }
+.Plan span:nth-child(5) { background-color: #ffedcc; }
+.Plan span:nth-child(6) { background-color: #ffedcc; }
+.Plan span:nth-child(8) { background-color: #ffedcc; }
+.Plan span:nth-child(9) { background-color: #ffedcc; }
+.Plan span:nth-child(10) { background-color: #ffedcc; }
+.Plan span:nth-child(11) { background-color: #ffedcc; }
+.Plan span:nth-child(12) { background-color: #ffedcc; }
+.Plan span:nth-child(13) { background-color: #ffedcc; }
+.Plan span:nth-child(14) { background-color: #ffedcc; }
+.Plan span:nth-child(15) { background-color: #ffedcc; }
+.Plan span:nth-child(17) { background-color: #ffedcc; }
+.Plan span:nth-child(18) { background-color: #ffedcc; }
+.Plan span:nth-child(19) { background-color: #ffedcc; }
+.Plan span:nth-child(20) { background-color: #ffedcc; }
+
+
+
+
+.button-container {
+    display: flex;
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 20px; /* Adds space between the heading and buttons */
+}
+
+.National, .InterNational {
+    background: linear-gradient(45deg, #ffa500,#ff4500 );
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  margin-top: 20px;
+  color: #ffedcc;
+}
+
+.National:hover, .InterNational:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.3);
+  color: #ffa500;
+  border-color: #ffa500;
+}
+
+/* Updated Plan Container Styling */
+.plan {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between content and buttons */
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plan h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #007BFF;
+}
+
+.plan p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0; /* Added margin for better spacing */
+}
+
+.plan .description {
+    font-size: 12px;
+    color: #777;
+    margin: 10px 0; /* Added margin for better spacing */
+}
+
+.plan .buttons {
+    display: flex;
+    justify-content: space-between; /* Space between Buy Now and Price buttons */
+    gap: 10px; /* Space between buttons */
+    margin-top: 15px; /* Added margin for better spacing */
+}
+
+.plan .buttons button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Equal width for both buttons */
+}
+
+.plan .buttons .buy-now {
+    background-color: #ffa500;
+    color: white;
+}
+
+.plan .buttons .buy-now:hover {
+    background-color: #ff8c00;
+}
+
+.plan .buttons .price {
+    background-color: #55a630;
+    color: white;
+}
+
+.plan .buttons .price:hover {
+    background-color: #4a8c2a;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%; /* Responsive width */
+    max-width: 400px; /* Max width */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/*renew form styling*/
+/* General styling for the renewal section */
+.Renew {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.form-container-Reneaw {
+    background-color: #E0E0E0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+/* Styling for the heading */
+.Renew-heading {
+    
+        display: flex;
+        gap: 6px;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ffa500;
+        margin: 2rem 0;
+        padding: 20px 0; /* Add padding if needed */
+    }
+
+.Renew-heading span {
+    padding: 8px; /* Optional: Add padding for better spacing */
+   }
+
+.Renew-heading span:nth-child(1) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(2) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(3) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(4) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(5) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(7) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(8) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(9) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(10) { background-color: #ffedcc; }
+
+.Renew-heading span:nth-child(12) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(13) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(14) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(15) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(16) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(17) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(18) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(19) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(20) { background-color: #ffedcc; }
+
+.Renew-heading span:nth-child(22) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(23) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(24) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(25) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(26) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(27) { background-color: #ffedcc; }
+.Renew-heading span:nth-child(28) { background-color: #ffedcc; }
+
+
+
+
+/* Styling for form groups */
+ .renew-form-group {
+    margin-bottom: 20px;
+}
+
+ .renew-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+ .renew-form-group input, .renew-form-group select, .renew-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.renew-form-group input:focus, .renew-form-group select:focus, .renew-form-group textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Styling for checkbox group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-group label {
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: #555;
+}
+
+/* Styling for buttons */
+.calculate-premium-btn, .save-later-btn, .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.calculate-premium-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.calculate-premium-btn:hover {
+    background-color: #218838;
+}
+
+.save-later-btn {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.save-later-btn:hover {
+    background-color: #e0a800;
+}
+
+.submit-btn {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for payment section */
+.renew-form-group input[type="month"] {
+    padding: 9px;
+}
+
+/* Styling for terms and conditions */
+.renew-form-group label input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.renew-form-group label a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.renew-form-group label a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for additional comments */
+.renew-form-group textarea {
+    resize: vertical;
+}
+
+
+/*Modal for renew policy form*/
+/* Modal Styles */
+.modal-renew {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-renew {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-btn-renew {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn-renew:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/*paregraph*/
+.container-two {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background:#E0E0E0;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Insurance Container */
+.insurance-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: whitesmoke;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.insurance-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffa500;
+    margin-bottom: 30px;
+}
+
+/* Insurance Sections */
+.insurance-section {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.insurance-section:last-child {
+    border-bottom: none;
+}
+
+.insurance-section:hover {
+    transform: translateX(10px);
+}
+
+/* Section Content */
+.section-content {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:#ffa500 ;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* Read More Button */
+.read-more-btn {
+    background: linear-gradient(45deg, #ffa500, #ff7b00);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.read-more-btn:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
+}
+
+.footer {
+    background-color: #2c2c2c; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.footer hr {
+    border: 0;
+    border-top: 1px solid #555; /* Light grey horizontal line */
+    margin-bottom: 10px;
+}
+
+.footer span {
+    color: #ffa500; /* Highlighted name */
+    font-weight: bold;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .footer span {
+        font-size: 16px;
+    }
+}
+    

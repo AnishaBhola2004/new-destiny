@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny Trails</title>
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+<script src="firebase-config.js"></script>
+<script defer src="auth.js"></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png"  href="Images/fevicon.png">
+    <link rel="stylesheet" href="css/Mbstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <header>
+       
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="index.html" class="logo"><img src="Images\fevicon.png" alt="logo"></a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="booking-page.html" target="_blank">book</a>
+            <a href="#packages">packages</a>
+            <a href="#services">services</a>
+            <a href="#gallery">gallery</a>
+            <a href="#review" onclick="showReviewForm()">review</a>
+            <a href="#contact">contact</a>
+            <a href="Travel-Insurance.html" target="_blank">Travel Insurance</a>
+
+        </nav>
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+         <!-- Search Bar -->
+         <form action="https://www.google.com/search" method="GET" class="search-bar-container" target="_blank">
+            <input type="text" name="q" id="search-bar" placeholder="Search here...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+
+    </header>
+
+    <div class="login-form-container">
+        <i class="fas fa-times" id="form-close"></i>
+        
+        <form id="auth-form">
+            <h3 id="form-title">Login</h3>
+    
+            <input type="text" class="box" id="user-name" placeholder="Enter your name" style="display: none;">
+            <input type="email" class="box" id="login-email" placeholder="Enter your email">
+            <input type="password" class="box" id="login-password" placeholder="Enter your password">
+    
+            <input type="submit" value="Login Now" class="btn" id="login-submit">
+            <button type="button" class="btn" id="google-signin">Sign in with Google</button>
+    
+            <p id="toggle-auth">Don't have an account? <a href="#">Register now</a></p>
+            <p>Forgot password? <a href="#" id="forgot-password">Click here</a></p>
+        </form>
+    </div>
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <section class="JS-Modal"></section>
+        <div class="content">
+            <h3>LIVE, LOVE, TRAVEL</h3>
+        <p>“The world is a book and those who do not travel read only one page.”</p>
+        <a href="#" class="btn">Discover More</a> 
+    </div>
+
+    <!-- Modal -->
+    <div id="travelModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>🌍 Let Destiny Trails Be Your Guide!</h2>
+            <p>What if the trail you choose today leads you to a moment you’ll remember forever?  
+            Where will your feet take you next? 🏞️✨</p>
+            <div class="modal-buttons">
+                <button class="explore">Explore Trails 🗺️</button>
+                <button class="community">Join the Community 🤝</button>
+                <button class="plan">Plan Your Adventure 📅</button>
+            </div>
+            <button class="close-btn">Close</button>
+        </div>
+        </div>
+
+        <div class="controls">
+            <span class="vid-btn active" data-src="videos\VC3.mp4"></span>
+     <span class="vid-btn" data-src="videos\VC2.mp4"></span>
+     <span class="vid-btn" data-src="videos\VC1.mp4"></span>
+    <span class="vid-btn" data-src="videos\VC4.mp4"></span>
+    <span class="vid-btn" data-src="videos\VC5.mp4"></span>
+        </div>
+
+        <div class="video-container">
+            <video src="videos/VC3.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- book section starts  -->
+
+    <section class="book" id="book">
+
+        <h1 class="heading">
+            <span>b</span>
+            <span>o</span>
+            <span>o</span>
+            <span>k</span>
+            <span class="space"></span>
+            <span>n</span>
+            <span>o</span>
+            <span>w</span>
+        </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="book-img.svg" alt="">
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="fb9721ed-fba4-4547-ad57-5ab22f540342">
+
+                <div class="inputBox">
+                    <h3>Where to</h3>
+                    <input type="text" name="destination" placeholder="place name" required>
+                </div>
+                <div class="inputBox">
+                    <h3>How many</h3>
+                    <input type="number" name="guests" placeholder="number of guests" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Arrivals</h3>
+                    <input type="date" name="arrival" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Leaving</h3>
+                    <input type="date" name="departure" required>
+                </div>
+                <input type="submit" class="btn" value="Book Now">
+            </form>
+
+        </div>
+        <!-- Modal Structure -->
+<div id="successModal" class="modal-Book">
+    <div class="modal-content-Book">
+        <p>🎉 Your data has been successfully submitted! 🎉</p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+
+    </section>
+
+    <!-- book section ends -->
+
+    <!-- packages section starts  -->
+
+    <section class="packages" id="packages">
+
+        <h1 class="heading">
+            <span>p</span>
+            <span>a</span>
+            <span>c</span>
+            <span>k</span>
+            <span>a</span>
+            <span>g</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="Images/p-1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> mumbai </h3>
+                    <p>Mumbai, the capital of Maharashtra, 
+                        is the financial, commercial, and entertainment hub of India. 
+                        Known as the "City of Dreams," it is home to Bollywood, India's thriving film industry.
+                         Located on the west coast, thriving business districts, making it one of India's most dynamic and cosmopolitan cities</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price"> ₹9000 <span>₹10000</span> </div>
+                     <a href="booking-page.html" target="_blank" class="btn">book now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/Kedarnath.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Kedarnath </h3>
+                    <p>Kedarnath is a sacred town in Uttarakhand, India, known for the Kedarnath Temple, dedicated to Lord Shiva. It is one of the twelve Jyotirlingas and a key pilgrimage site in the Char Dham Yatra.
+                         Situated at an altitude of 3,583 meters in the Himalayas, the temple is surrounded by breathtaking snow-clad peaks</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price"> ₹10,000 <span>₹12,000</span> </div>
+                    <a href="booking-page.html" target="_blank" class="btn">book now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/Manali.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Manali </h3>
+                    <p>Manali is a popular hill station in Himachal Pradesh, India, known for its breathtaking
+                         landscapes, snow-capped mountains, and adventure activities. Situated in the Kullu Valley along the Beas River,
+                          it attracts tourists year-round for skiing, trekking, river rafting, and paragliding.
+                           Manali is also a gateway to the scenic Solang Valley and the high-altitude Rohtang Pass.
+                            The town has a mix of natural beauty and cultural heritage, with attractions like Hadimba Temple, Manu Temple,
+                             and vibrant local markets. 
+                        </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price"> ₹14000 <span>₹16000</span> </div>
+                    <a href="booking-page.html" target="_blank" class="btn">book now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/Ladakh.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>Ladakh</h3>
+                    <p>Ladakh, often called the "Land of High Passes," is a breathtaking region in northern India, known for its stunning landscapes, 
+                        Buddhist monasteries, and unique culture. Located in the Himalayas, it features rugged mountains, crystal-clear lakes like
+                         Pangong and Tso Moriri, and beautiful valleys such as Nubra and Zanskar. Ladakh is famous for adventure activities like trekking,
+                          river rafting, and biking on the world’s highest motorable roads. </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa
+                        -star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price"> ₹15000 <span>₹18000</span> </div>
+                    <a href="booking-page.html" target="_blank" class="btn">book now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/Nainital.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Nainital </h3>
+                    <p>Nainital is a beautiful hill station in Uttarakhand, 
+                        India, known for its picturesque Naini Lake, surrounded by lush green hills.
+                         It is a popular tourist destination, offering breathtaking views, a pleasant climate, and attractions like Naina Devi Temple, 
+                         😊🏔️</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price"> ₹10000 <span>₹11000</span> </div>
+                    <a href="booking-page.html" target="_blank" class="btn">book now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/Shimla.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>Shimla </h3>
+                    <p>Shimla, the capital of Himachal Pradesh, is a beautiful hill station in northern India, known for its colonial architecture, scenic landscapes, and pleasant weather.
+                         Nestled in the Himalayas, it was once the summer capital of British India. Popular attractions include Mall Road, The Ridge, Kufri, Jakhoo Temple, and Christ Church. Shimla is famous for 
+                        its snowfall in winter, making it a favorite destination for tourists seeking adventure, trekking, and a peaceful retreat in nature.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price"> ₹8000 <span>₹10000</span> </div>
+                    <a href="booking-page.html" target="_blank" class="btn">book now</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="services" id="services">
+
+        <h1 class="heading">
+            <span>s</span>
+            <span>e</span>
+            <span>r</span>
+            <span>v</span>
+            <span>i</span>
+            <span>c</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fas fa-hotel"></i>
+                <h3>affordable hotels</h3>
+                <p>"Comfort & Savings Combined – Stay at Affordable Hotels!</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3>food and drinks</h3>
+                <p>"Savor the flavors, sip the joy! 🍽️🥂"</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Tour Escorts</h3>
+                <p>"Guiding Your Journey, Enhancing Your Experience! 🚀✨"</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-globe-asia"></i>
+                <h3>around the world</h3>
+                <p>"Explore. Dream. Discover. ✈️🌍"</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-plane"></i>
+                <h3>fastest travel</h3>
+                <p>"Swift Journeys, Endless Memories! 🚀✈️"</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-hiking"></i>
+                <h3>adventures</h3>
+                <p>"Adventure awaits—embrace the thrill and explore beyond limits!" 🚀🏔️</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-book"></i>
+                <h3>travel guidelines</h3>
+                <p>"Travel Smart, Stay Safe – Follow the Guidelines for a Hassle-Free Journey!"</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-female"></i>
+                <h3>Women solo trip</h3>
+                <p>"Empowered. Independent. Unstoppable. ✨ #SoloWomanTraveler"</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-train"></i>
+                <h3>forex card</h3>
+                <p>"Travel Smart, Spend Seamless – Your Forex Card, Your Global Wallet!"</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-gift"></i>
+                <h3> gift-card</h3>
+                <p>"🎁 Travel More, Gift More! ✈️✨ Give the gift of unforgettable journeys with our exclusive travel gift cards! 🌍❤️"</p>
+            </div>
+
+        </div>
+
+        <!--App download section-->
+      
+<section class="app-download">
+    <div class="app-download-container">
+        <div class="app-content">
+            <div class="app-header">
+                <img src="Images\logo.PNG" alt="App Icon" class="app-icon">
+                <div class="header-text">
+                    <h2>Download Our Travel App !</h2>
+                    <div class="offer-badge">
+                        <span>Limited Time Offer</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>Instant flight bookings</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>Exclusive travel deals</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>Real-time flight updates</span>
+                </div>
+            </div>
+
+            <div class="offer-text">
+                <p>Use code <span style="font-style: italic; font-weight: bold;">WELCOMEMMT</span> and get 
+                <span style="font-style: italic; font-weight: bold;" >FLAT 12% OFF*</span> on your first booking</p>
+            </div>
+
+            <div class="input-container">
+                <div class="country-code">
+                    <span class="flag">🇮🇳 +91</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <input type="tel" placeholder="Enter mobile number" pattern="[0-9]{10}">
+                <button class="app-link-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Send Link
+                </button>
+            </div>
+
+            <div class="download-links">
+                
+                <div class="store-buttons">
+                    <a href="https://play.google.com/store" target="_blank" class="store-btn google-play">
+                        <i class="fab fa-google-play"></i>
+                        <div>
+                            <span>GET IT ON</span>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+                    <a href="https://www.apple.com/app-store/" target="_blank" class="store-btn app-store">
+                        <i class="fab fa-apple"></i>
+                        <div>
+                            <span>Download on the</span>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-preview">
+            
+            <div class="qr-container">
+                <img src="https://promos.makemytrip.com/Growth/Images/B2C/dt_app_download_qr.png" alt="QR Code" class="qr-code">
+                <p>Scan to Download</p>
+            </div>
+        </div>
+    </div>
+</section>
+    </section>
+
+<!--gallery section-->
+
+<section class="gallery" id="gallery">
+
+    <h1 class="heading">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+    </h1>
+
+    <div class="box-container" id="gallery-container">
+
+        <!-- Existing Image Boxes -->
+         <!-- Image Preview Section -->
+    <div id="imagePreview" class="image-preview">
+        <div class="box">
+            <img src="Images/g-1.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-2.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-3.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-4.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-5.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-6.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-7.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-8.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-9.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-10.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images/g-11.jfif" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+     <!-- Upload Box -->
+     <label for="upload" class="upload-box">
+        <span class="icon">📷</span>
+        <span>Add your image</span>
+        <input id="upload" type="file" class="hidden" accept="image/*" onchange="previewImage(event)">
+    </label>
+</div>
+<!-- Success Modal -->
+<div id="successModal" class="modal-gallery">
+    Image is successfully saved!
+</div>
+
+</section>
+
+    <section class="review" id="review">
+
+        <h1 class="heading">
+            <span>r</span>
+            <span>e</span>
+            <span>v</span>
+            <span>i</span>
+            <span>e</span>
+            <span>w</span>
+            <span>s</span>
+        </h1>
+
+        <div class="swiper-container review-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="Images/AK.jpeg" alt="">
+                        <h3>Akash Khurana</h3>
+                        <p>We booked our Manali trip package from holidays crowd, amazing trip organised by team
+                            holidays crowd. excellent behaviour by the team holidays crowd and well managed our trip
+                            thank You Holidays crowd!</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="Images/RS.jpeg" alt="">
+                        <h3>Rishiika Sandal</h3>
+                        <p>MERA BHARAT always offer exclusive deals on domestic flights. I have often book my air ticket
+                            from the MERA BHARAT website only because I used to get discounts & cashbacks.After singing
+                            on
+                            the website I received an instant 1000 Rs. cashback in my Mera Bharat Account</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="Images/AM.jpeg" alt="">
+                        <h3>Aditi Mittal</h3>
+                        <p>I was reluctant to book a flight ticket from Mumbai to Delhi from a site that I've never
+                            heard of but the offers and deals were enticing so I took a chance and went ahead with the
+                            booking. The confirmation mail was very delayed, it took them a day </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="Images/LS.jpeg" alt="">
+                        <h3>Lakshay Saraswat</h3>
+                        <p>I booked my flight ticket from Patna to Ranchi on 28 Jun 2021 for 15 July 2021.The flight
+                            ticket price was 2755 INR(AirAsia). I received a cashback offer in my wallet.Overall,
+                            it was a nice experience for me, because the flight booking procedure </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="Images/AA.jpeg" alt="">
+                        <h3>Anmol Aneja</h3>
+                        <p>Very excellent service. Good travel. Worth for money. I love this experience very much. Nice
+                            one . best quality experience</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="reviewForm">
+            <h2 >Share Your Experience</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="fb9721ed-fba4-4547-ad57-5ab22f540342">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin: 8px 0;">
+        
+                <label for="photo">Your Photo (URL):</label>
+                <input type="text" id="photo" name="photo" placeholder="Enter image link" >
+        
+                <label for="review">Your Review:</label>
+                <textarea id="review" name="review" rows="4"></textarea>
+        
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required style="width: 100%; padding: 8px; margin: 8px 0;">
+                    <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                    <option value="4">⭐⭐⭐⭐ - Good</option>
+                    <option value="3">⭐⭐⭐ - Average</option>
+                    <option value="2">⭐⭐ - Poor</option>
+                    <option value="1">⭐ - Bad</option>
+                </select>
+        
+                <button type="submit" >
+                    Submit Review
+                </button>
+            </form>
+            
+        </div>
+        
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading">
+            <span>c</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>a</span>
+            <span>c</span>
+            <span>t</span>
+            <span class="space"></span>
+            <span>u</span>
+            <span>s</span>
+        </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="contact-img.svg" alt="">
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="fb9721ed-fba4-4547-ad57-5ab22f540342">
+                <div class="inputBox">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="inputBox">
+                    <input type="tel" name="number" placeholder="mobile number" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <textarea name="message" placeholder="Message" cols="30" rows="10" required></textarea>
+                <input type="submit" class="btn" value="Send Message">
+                
+            </form>
+            
+
+        </div>
+
+    </section>
+
+    <section class="brand-container">
+
+        <div class="swiper-container brand-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="Images/1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="Images/2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="Images/3.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="Images/4.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="Images/5.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="Images/6.jpg" alt=""></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- footer section  -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-box about">
+                <h3>About Us</h3>
+                <p>Nurtured from the seed of a single great idea - to empower the traveller - MakeMyTrip pioneered India’s online travel industry.</p>
+            </div>
+    
+            <div class="footer-box branches">
+                <h3>Branch Locations</h3>
+                <ul>
+                    <li><a href="#">India</a></li>
+                    <li><a href="#">USA</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">France</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-box quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="booking-page.html">Book</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Review</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="Travel-Insurance.html">Travel Insurance</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-box contact">
+                <h3>Contact Us</h3>
+                <a href="mailto:support@merabharat.com" class="btn email-btn">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+                <a href="https://wa.me/919877889775?text=Welcome%20to%20Destiny%20Trails" class="btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+    
+            <div class="footer-box social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <button id="scrollToTop" class="scroll-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    
+        <p class="credit">Created by <span>Ms. Anisha Bhola</span> | All Rights Reserved!</p>
+    </footer>
+    
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+     
+    <!-- <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script> -->
+    <script src="js/script.js"></script>
+    
+
+</body>
+
+</html>

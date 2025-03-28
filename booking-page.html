@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking Details</title>
+    <link rel="icon" type="image/png"  sizes="64x64" href="Images\fevicon.png">
+    <link rel="stylesheet" href="css/BookingPage-Styling.css">
+    <script src="BookingServer.js"></script>
+    
+</head>
+<body onload="loadDetails()">
+        <header>
+            <a href="index.html"><img src="Images/logo-removebg-preview.png" alt="Logo" class="logo"> </a>
+        <h1>Book your trip</h1>
+        <nav>
+            <a href="#hotels">On-Hand Hotels</a>
+            <a href="#homestays">Homestay</a>
+            <a href="#guides">Tour Escorts</a>
+            <a href="#booking">Booking</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hotels Section -->
+        <div class="section" id="hotels">
+            <h1 class="HOTELS">
+                <span>O</span>
+                <span>n</span>
+                <span>-</span>
+                <span>H</span>
+                <span>a</span>
+                <span>n</span>
+                <span>d</span>
+                <span> </span>
+                <span>H</span>
+                <span>o</span>
+                <span>t</span>
+                <span>e</span>
+                <span>l</span>
+                <span>s</span>
+            </h1>
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="navigateSlider('hotels', -1)">&lt;</button>
+                <div id="hotel-slider" class="slider"></div>
+                        <button class="slider-nav next" onclick="navigateSlider('hotels', 1)">&gt;</button>
+            
+        </div>
+
+        <!-- Homestay Section -->
+        <div class="section" id="homestays">
+            <h1 class="HOMESTAYS">
+                <span>H</span>
+                <span>o</span>
+                <span>m</span>
+                <span>e</span>
+                <span>s</span>
+                <span>t</span>
+                <span>a</span>
+                <span>y</span>
+            </h1>
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="navigateSlider('homestays', -1)">&lt;</button>
+                <div id="homestay-slider" class="slider"></div>
+                <button class="slider-nav next" onclick="navigateSlider('homestays', 1)">&gt;</button>
+            </div>0
+        </div>
+
+        <!-- Tourist Guide Section -->
+        <div class="section" id="guides">
+            <h1 class="ESCORTS">
+                <span>T</span>
+                <span>o</span>
+                <span>u</span>
+                <span>r</span>
+                <span> </span>
+                <span>E</span>
+                <span>s</span>
+                <span>c</span>
+                <span>o</span>
+                <span>r</span>
+                <span>t</span>
+            </h1>
+            
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="navigateSlider('guides', -1)">&lt;</button>
+                <div id="tourist-guide-slider" class="slider"></div>
+                <button class="slider-nav next" onclick="navigateSlider('guides', 1)">&gt;</button>
+            </div>
+        </div>
+
+        <!-- Booking Section -->
+        <div class="section" id="booking">
+            <h1 class="Travell">
+                <span>B</span>
+                <span>o</span>
+                <span>o</span>
+                <span>k</span>
+                <span> </span>
+                <span>Y</span>
+                <span>o</span>
+                <span>u</span>
+                <span>r</span>
+                <span> </span>
+                <span>T</span>
+                <span>r</span>
+                <span>a</span>
+                <span>v</span>
+                <span>e</span>
+                <span>l</span>
+            </h1>
+                <!-- outer container for international hotels offer-->
+            <div class="International-Hotel">
+                <section class ="OuterBox">
+                    <!--hotel images-->
+                    <img src="Images/Untitled design.png" alt="Hotel Image" class="Hotel-pic">
+
+                <div class="special-fares">
+                            <h2>Select a Special Fares on Flights </h2>
+                            
+                            <button onclick="selectFare('Student')">Student <p>Unlock More: Extra Savings & Added Baggage!</p></button>
+                            <button onclick="selectFare('Armed Forces')">Armed Forces <p>💰 "Save Big: Grab Discounts Up to ₹600!"</p></button>
+                            <button onclick="selectFare('Senior Citizen')">Senior Citizen <p>🎉 "Unlock Savings: Enjoy Up to ₹600 Off!</p></button>
+                            <button onclick="selectFare('Doctor/Nurses')">Doctor/Nurses <p>🔥 "Limited Offer: Slash Up to ₹600 Off Your Trip!"</p></button>
+                        </div>
+                    </div>
+ </section>
+                     
+                
+            
+                <div class="bank-offers">
+                    <div class="bank-card">
+                        <img src="Images/hsbc.jpg" alt="HSBC">
+                        <p>Friday, Saturday</p>
+                    </div>
+                    <div class="bank-card">
+                        <img src="Images/999.PNG" alt="ICICI Bank">
+                        <p>Sunday, Monday</p>
+                    </div>
+                    <div class="bank-card">
+                        <img src="Images/federal.PNG" alt="Federal Bank">
+                        <p>Tuesday</p>
+                    </div>
+                    <div class="bank-card">
+                        <img src="Images/hdfc.PNG" alt="HDFC Bank">
+                        <p>Monday, Sunday</p>
+                    </div>
+                    <div class="bank-card">
+                        <img src="Images/SBI.PNG" alt="SBI Card">
+                        <p>Monday, Sunday</p>
+                    </div>
+                </div>
+            
+                <div class="footer1">
+                    <p>"This exclusive offer is valid until January 14th on select bank transactions. Avail the benefits before the deadline and enjoy special savings!"</p>
+                </div>
+            </div>
+            <section class="BTN1">
+            <button onclick="alert('For detailed flight information,dates and arrival times, available classes, pricing, and more, please scroll down to view the relevant section below')">Book Flight</button>
+            <button onclick="alert('Train Booking Coming Soon and further inforamtion is given below')">Book Train</button>
+            <button onclick="alert('Bus Booking Coming Soon and further inforamtion is given below')">Book Bus</button>
+            <button onclick="alert('Cab Booking Coming Soon and further inforamtion is given below')">Book Cab</button>
+            </section>
+      </div>
+      
+     
+      
+              <!-- Flight Search -->
+
+              <div class="flight-container">  
+                <form action="https://api.web3forms.com/submit" method="POST">
+
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="fb9721ed-fba4-4547-ad57-5ab22f540342">
+                <div class="flight-booking-form">
+                  <h1>Flights</h1>
+                  <div class="trip-type">
+  <label><input type="radio" name="trip-type" value="one-way" checked> One Way</label>
+  <label><input type="radio" name="trip-type" value="round-trip"> Round Trip</label>
+  <label><input type="radio" name="trip-type" value="multi-city"> Multi City</label>
+                  </div>
+                  <div class="form-fields">
+                    <div class="field">
+                      <label class="label">From:</label>
+                      <input type="text" class="input" placeholder="Enter departure city">
+                    </div>
+                    <div class="field">
+                      <label class="label">To:</label>
+                      <input type="text" class="input" placeholder="Enter destination city">
+                    </div>
+                    <div class="field">
+                      <label class="label">Departure:</label>
+                      <input type="date" class="input">
+                    </div>
+                    <div class="travelers-class">
+                        <label><input type="checkbox" value="traveler"> Traveler</label>
+                        <label><input type="checkbox" value="economy"> Economy</label>
+                        <label><input type="checkbox" value="business"> Business</label>
+                    </div>
+                    <button class="search-button">Search Flights</button>
+                  </div>
+                </div>
+                </form>
+              </div>
+    
+<!--trainnnnnnnnnnnnnnnn-->
+<!--train Booking-->
+<section class="train">
+    <div class="Train-section">
+        <!-- Slider Navigation Buttons -->
+        <div class="slider-navigation">
+            <button id="prevBtn" class="nav-btn">&#10094; Prev</button>
+            <h2> Train</h2>
+            <button id="nextBtn" class="nav-btn">Next &#10095;</button>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="slider-container">
+            <!-- Book Train Tickets Form -->
+            <div class="slider-item active">
+                <div class="Train-Booking">
+                    <h2>Book Train Tickets</h2>
+                    <div class="form-row-12">
+                        <div class="form-column-12">
+                            <label for="from">From</label>
+                            <select id="from">
+                                <option>New Delhi</option>
+                                <option>Mumbai</option>
+                                <option>Kolkata</option>
+                                <option>Chennai</option>
+                                <option>Bengalore</option>
+                                <option>Hyderabad</option>
+                                <option>Adhmedabad</option>
+                                <option>Pune</option>
+                                <option>Jaipur</option>
+                                <option>Lucknow</option>
+                                <option>Patna</option>
+                                <option>Bhopal</option>
+                                <option>Khanpur</option>
+                                <option>Nagpur</option>
+                                <option>Ludhiana</option>
+                                <option>Chandigarh</option>
+                                <option>Mohali</option>
+                                <option>Kharar</option>
+                                <option>Agra</option>
+                                <option>Amritsar</option>
+                                <option>Varanasi</option>
+                            </select>
+                        </div>
+                        <div class="form-column-12">
+                            <label for="to">To</label>
+                            <select id="to">
+                                <option>New Delhi</option>
+                                <option>Mumbai</option>
+                                <option>Kolkata</option>
+                                <option>Chennai</option>
+                                <option>Bengalore</option>
+                                <option>Hyderabad</option>
+                                <option>Adhmedabad</option>
+                                <option>Pune</option>
+                                <option>Jaipur</option>
+                                <option>Lucknow</option>
+                                <option>Patna</option>
+                                <option>Bhopal</option>
+                                <option>Khanpur</option>
+                                <option>Nagpur</option>
+                                <option>Ludhiana</option>
+                                <option>Chandigarh</option>
+                                <option>Mohali</option>
+                                <option>Kharar</option>
+                                <option>Agra</option>
+                                <option>Amritsar</option>
+                                <option>Varanasi</option>
+                                
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row-12">
+                        <div class="form-column-12">
+                            <label for="travelDate">Travel Date</label>
+                            <input type="date" id="travelDate">
+                        </div>
+                        <div class="form-column-12">
+                            <label for="class">Class</label>
+                            <select id="class">
+                                <option>Sleeper Class</option>
+                                <option>AC Class</option>
+                                <option>General Class</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="search-btn" >Search</button>
+            </div>
+
+            <!-- Check PNR Status Form -->
+            <div class="slider-item">
+                <div class="Train-Booking">
+                    <h2>Check PNR Status</h2>
+                    <div class="form-row-12">
+                        <div class="form-column-12">
+                            <label for="pnrNumber">Enter your 10-digit PNR Number:</label>
+                            <input type="text" id="pnrNumber" placeholder="Enter PNR Number" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="form-row-12">
+                        <div class="form-column-12">
+                            <label for="pnrTravelDate">Travel Date</label>
+                            <input type="date" id="pnrTravelDate">
+                        </div>
+                    </div>
+                    <button id="checkStatusBtn">Check Status</button>  </div>
+            </div>
+
+            <!-- Live Train Status Form -->
+            <div class="slider-item">
+                <div class="Train-status">
+                    <h2>Live Train Status</h2>
+                    <div class="input-group00">
+                        <label for="trainNumber">Train Number/Name</label>
+                        <input type="text" id="trainNumber" placeholder="Enter Train Number/Name">
+                    </div>
+                    <div class="input-group00">
+                        <label for="station">Your Stop</label>
+                        <input type="text" id="station" placeholder="Enter Your Stop">
+                    </div>
+                    <div class="input-group00">
+                        <label for="trainDate">Train Start Date</label>
+                        <input type="date" id="trainDate">
+                    </div>
+                    <button id="checkStatusBtn12">CHECK STATUS</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  
+
+<!-- bus section-->
+<article class="bus-section">
+    <div >
+        <!--<img src="C:\Users\hp\Desktop\semester 5\travelling website\New folder\Images\bus.PNG" alt="Bus" class="BusImage">
+        <img src="C:\Users\hp\Desktop\semester 5\travelling website\New folder\Images\bus2.PNG" alt="Bus" class="BusImage2">-->
+
+    </div>
+    <section class="Bus">
+        <h2>Bus</h2>
+        <div class="Bus-booking-form">
+            <div class="group-travel">
+                <label for="group-travel">
+                    <input type="checkbox" id="group-travel"> Travel with Group
+                </label>
+                <div class="bus-option">
+                    <label for="need-bus">
+                        <input type="checkbox" id="need-bus"> Need a Bus
+                    </label>
+                </div>
+            </div>
+            <div class="Bus-trip-type">
+                <button class="trip-option active">ONE WAY</button> <!--"ONE WAY" is selected by default.-->
+                <button class="trip-option">ROUND TRIP</button>
+            </div>
+            <div class="location-inputs">
+                <div class="input-field">
+                    <label for="pickup">FROM</label>
+                    <input type="text" id="pickup" placeholder="Enter Pickup City">
+                </div>
+                <div class="input-field">
+                    <label for="drop">TO</label>
+                    <input type="text" id="drop" placeholder="Enter Drop City">
+                </div>
+            </div>
+            <div class="date-time">
+                <div class="input-field">
+                    <label for="pickup-date">PICK UP DATE</label>
+                    <input type="date" id="pickup-date" value="2025-02-08">
+                </div>
+                <div class="input-field">
+                    <label for="pickup-time">PICK UP TIME</label>
+                    <select id="pickup-time">
+                        <option value="7:00 AM">7:00 AM</option>
+                        <option value="8:00 AM">8:00 AM</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 AM">12:00 AM</option>
+                        <option value="1:00 AM">1:00 AM</option>
+                        <option value="2:00 AM">2:00 AM</option>
+                        <option value="3:00 AM">3:00 AM</option>
+                        <option value="4:00 AM">4:00 AM</option>
+                        <option value="5:00 AM">5:00 AM</option>
+                        <option value="6:00 AM">6:00 AM</option>
+                        <option value="7:00 PM">7:00 PM</option>
+                        <option value="8:00 PM">8:00 PM</option>
+                        <option value="9:00 PM">9:00 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
+                        <option value="11:00 PM">11:00 PM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                    </select>
+                </div>
+            </div>
+            <button id="exploreBusesBtn" class="explore-buses">Explore Buses</button>
+
+        </div>
+
+        <!-- Modal Popup -->
+<div id="popupModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+    </section>
+</article>
+
+<!-- CABS-->
+<article class="Taxii">
+    <section class="Txi-container">
+        <div class="tabs">
+            <button class="tab active">Outstation One-Way</button>
+            <button class="tab">Outstation Round-Trip</button>
+            <button class="tab">Airport Transfers</button>
+            <button class="tab">Hourly Rentals</button>
+        </div>
+        <div class="search-form11">
+            <div class="input-group11">
+                <label for="pickup-location">Pickup Location</label>
+                <select id="pickup-location">
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Visakhapatnam">Visakhapatnam</option>
+                    <option value="Vijayawada">Vijayawada</option>
+                    <option value="Tirupati">Tirupati</option>
+                    <option value="Jorhat">Jorhat</option>
+                    <option value="Dibrugarh">Dibrugarh</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Bhagalpur">Bhagalpur</option>
+                    <option value="Raipur">Raipur</option>
+                    <option value="Panaji">Panaji</option>
+                    <option value="Margao">Margao</option>
+                    <option value="Vasco da Gama">Vasco da Gama</option>
+                    <option value="Ambala">Ambala</option>
+                    <option value="Panipat">Panipat</option>
+                    <option value="Faridabad">Faridabad</option>
+                    <option value="Gurgaon">Gurgaon</option>
+                    <option value="Shimla">Shimla</option>
+                    <option value="Manali">Manali</option>
+                    <option value="Dharamshala">Dharamshala</option>
+                    <option value="Kullu">Kullu</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Lakshadweep (Kavaratti)">Lakshadweep (Kavaratti)</option>
+                    <option value="Kargil">Kargil</option>
+                    <option value="Srinagar">Srinagar</option>
+                    <option value="Andaman and Nicobar Islands (Port Blair)">Andaman and Nicobar Islands (Port Blair)</option>
+                    <option value="Durgapur">Durgapur</option>
+                    <option value="Dehradun">Dehradun</option>
+                    <option value="Haridwar">Haridwar</option>
+                    <option value="Rishikesh">Rishikesh</option>
+                    <option value="Patiala">Patiala</option>
+                    <option value="Jalandhar">Jalandhar</option>
+                    <option value="Ludhiana">Ludhiana</option>
+                    
+                    <!-- Additional Cities -->
+                    <option value="Agra">Agra</option>
+                    <option value="Allahabad">Allahabad</option>
+                    <option value="Amritsar">Amritsar</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Bhubaneswar">Bhubaneswar</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Cuttack">Cuttack</option>
+                    <option value="Gandhinagar">Gandhinagar</option>
+                    <option value="Guwahati">Guwahati</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Jammu">Jammu</option>
+                    <option value="Kanpur">Kanpur</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Nashik">Nashik</option>
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Ranchi">Ranchi</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                    <option value="Udaipur">Udaipur</option>
+                    <option value="Vadodara">Vadodara</option>
+                    <option value="Varanasi">Varanasi</option>
+                    <option value="Vijayawada">Vijayawada</option>
+                    <option value="Warangal">Warangal</option>
+                    <option value="Gwalior">Gwalior</option>
+                    <option value="Jodhpur">Jodhpur</option>
+                    <option value="Meerut">Meerut</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Ghaziabad">Ghaziabad</option>
+                    <option value="Aurangabad">Aurangabad</option>
+                    <option value="Solapur">Solapur</option>
+                    <option value="Bareilly">Bareilly</option>
+                    <option value="Moradabad">Moradabad</option>
+                    <option value="Aligarh">Aligarh</option>
+                    <option value="Jamshedpur">Jamshedpur</option>
+                    <option value="Bhilai">Bhilai</option>
+                    <option value="Siliguri">Siliguri</option>
+                    <option value="Dhanbad">Dhanbad</option>
+                    <option value="Asansol">Asansol</option>
+                    <option value="Rourkela">Rourkela</option>
+                    <option value="Kolhapur">Kolhapur</option>
+                    <option value="Ajmer">Ajmer</option>
+                    <option value="Bikaner">Bikaner</option>
+                    <option value="Ujjain">Ujjain</option>
+                    <option value="Sangli">Sangli</option>
+                    <option value="Belgaum">Belgaum</option>
+                    <option value="Mangalore">Mangalore</option>
+                    <option value="Tiruchirappalli">Tiruchirappalli</option>
+                    <option value="Kottayam">Kottayam</option>
+                    <option value="Kozhikode">Kozhikode</option>
+                    <option value="Malappuram">Malappuram</option>
+                    <option value="Thrissur">Thrissur</option>
+                    <option value="Kannur">Kannur</option>
+                    <option value="Alappuzha"></option>
+                </select>
+            </div>
+            <div class="input-group11">
+                <label for="pickup-date">Pickup Date</label>
+                <input type="date" id="pickup-date">
+            </div>
+            <div class="input-group11">
+                <label for="pickup-time">Pickup Time</label>
+                <select id="pickup-time">
+                    <option value="06:00 AM">06:00 AM</option>
+                    <option value="07:00 AM">07:00 AM</option>
+                    <option value="08:00 AM">08:00 AM</option>
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                    <option value="05:00 PM">05:00 PM</option>
+                    <option value="06:00 PM">06:00 PM</option>
+                    <option value="07:00 PM">07:00 PM</option>
+                    <option value="08:00 PM">08:00 PM</option>
+                    <option value="09:00 PM">09:00 PM</option>
+                </select>
+            </div>
+            <!-- New Drop Location and Drop Time Fields -->
+            <div class="input-group11 hidden" id="drop-location-group">
+                <label for="drop-location">Drop Location</label>
+                <select id="drop-location">
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Visakhapatnam">Visakhapatnam</option>
+                    <option value="Vijayawada">Vijayawada</option>
+                    <option value="Tirupati">Tirupati</option>
+                    <option value="Jorhat">Jorhat</option>
+                    <option value="Dibrugarh">Dibrugarh</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Bhagalpur">Bhagalpur</option>
+                    <option value="Raipur">Raipur</option>
+                    <option value="Panaji">Panaji</option>
+                    <option value="Margao">Margao</option>
+                    <option value="Vasco da Gama">Vasco da Gama</option>
+                    <option value="Ambala">Ambala</option>
+                    <option value="Panipat">Panipat</option>
+                    <option value="Faridabad">Faridabad</option>
+                    <option value="Gurgaon">Gurgaon</option>
+                    <option value="Shimla">Shimla</option>
+                    <option value="Manali">Manali</option>
+                    <option value="Dharamshala">Dharamshala</option>
+                    <option value="Kullu">Kullu</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Lakshadweep (Kavaratti)">Lakshadweep (Kavaratti)</option>
+                    <option value="Kargil">Kargil</option>
+                    <option value="Srinagar">Srinagar</option>
+                    <option value="Andaman and Nicobar Islands (Port Blair)">Andaman and Nicobar Islands (Port Blair)</option>
+                    <option value="Durgapur">Durgapur</option>
+                    <option value="Dehradun">Dehradun</option>
+                    <option value="Haridwar">Haridwar</option>
+                    <option value="Rishikesh">Rishikesh</option>
+                    <option value="Patiala">Patiala</option>
+                    <option value="Jalandhar">Jalandhar</option>
+                    <option value="Ludhiana">Ludhiana</option>
+                    
+                    <!-- Additional Cities -->
+                    <option value="Agra">Agra</option>
+                    <option value="Allahabad">Allahabad</option>
+                    <option value="Amritsar">Amritsar</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Bhubaneswar">Bhubaneswar</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Cuttack">Cuttack</option>
+                    <option value="Gandhinagar">Gandhinagar</option>
+                    <option value="Guwahati">Guwahati</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Jammu">Jammu</option>
+                    <option value="Kanpur">Kanpur</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Nashik">Nashik</option>
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Ranchi">Ranchi</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                    <option value="Udaipur">Udaipur</option>
+                    <option value="Vadodara">Vadodara</option>
+                    <option value="Varanasi">Varanasi</option>
+                    <option value="Vijayawada">Vijayawada</option>
+                    <option value="Warangal">Warangal</option>
+                    <option value="Gwalior">Gwalior</option>
+                    <option value="Jodhpur">Jodhpur</option>
+                    <option value="Meerut">Meerut</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Ghaziabad">Ghaziabad</option>
+                    <option value="Aurangabad">Aurangabad</option>
+                    <option value="Solapur">Solapur</option>
+                    <option value="Bareilly">Bareilly</option>
+                    <option value="Moradabad">Moradabad</option>
+                    <option value="Aligarh">Aligarh</option>
+                    <option value="Jamshedpur">Jamshedpur</option>
+                    <option value="Bhilai">Bhilai</option>
+                    <option value="Siliguri">Siliguri</option>
+                    <option value="Dhanbad">Dhanbad</option>
+                    <option value="Asansol">Asansol</option>
+                    <option value="Rourkela">Rourkela</option>
+                    <option value="Kolhapur">Kolhapur</option>
+                    <option value="Ajmer">Ajmer</option>
+                    <option value="Bikaner">Bikaner</option>
+                    <option value="Ujjain">Ujjain</option>
+                    <option value="Sangli">Sangli</option>
+                    <option value="Belgaum">Belgaum</option>
+                    <option value="Mangalore">Mangalore</option>
+                    <option value="Tiruchirappalli">Tiruchirappalli</option>
+                    <option value="Kottayam">Kottayam</option>
+                    <option value="Kozhikode">Kozhikode</option>
+                    <option value="Malappuram">Malappuram</option>
+                    <option value="Thrissur">Thrissur</option>
+                    <option value="Kannur">Kannur</option>
+                    <option value="Alappuzha"></option>
+                </select>
+            </div>
+            <div class="input-group11 hidden" id="drop-time-group">
+                <label for="drop-time">Drop Time</label>
+                <select id="drop-time">
+                    <!-- Options for drop time -->
+                    <option value="06:00 AM">06:00 AM</option>
+                    <option value="07:00 AM">07:00 AM</option>
+                    <option value="08:00 AM">08:00 AM</option>
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                    <option value="05:00 PM">05:00 PM</option>
+                    <option value="06:00 PM">06:00 PM</option>
+                    <option value="07:00 PM">07:00 PM</option>
+                    <option value="08:00 PM">08:00 PM</option>
+                    <option value="09:00 PM">09:00 PM</option>
+                </select>
+            </div>
+            <a href="Travel-Insurance.html" target="_blank"> <button class="search-button12">Select Package</button></a>
+            <button class="search-button11">SEARCH</button>
+        </div>
+
+        <!-- Modals -->
+<div id="one-way-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>🚖 Ride Smart, Pay Less! 🚖<br>Experience Outstanding One Way Cabs – Fast, Safe & Affordable!<br>👉 Book Now for a smooth and budget-friendly journey!</p>
+    </div>
+</div>
+
+<div id="round-trip-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>Book a Round Trip Cab with us and enjoy a safe, comfortable, and budget-friendly journey!<br>✅ Hassle-Free Booking<br>✅ Experienced Drivers</p>
+    </div>
+</div>
+
+<div id="airport-transfers-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>✈️ Touchdown & Ride On! 🚖<br>Need a smooth, stress-free ride from the airport? Our Airport Transfer Cabs are ready to get you to your destination—on time, every time!<br>✅ Affordable fares<br>✅ Comfort & Safety Guaranteed<br>📅 Book Now and travel worry-free!</p>
+    </div>
+</div>
+
+<div id="hourly-rentals-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>🕒 Flexible Hourly Rentals!<br>Need it for a few hours? We've got you covered! Choose our Hourly Rental option and pay only for the time you use.<br>✅ Affordable Rates<br>✅ No Long Commitments<br>✅ Instant Booking<br>👉 Reserve Now & Enjoy the Freedom!</p>
+    </div>
+</div>
+
+<div id="error-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>Please enter all the required information before proceeding.</p>
+    </div>
+</div>
+
+<div id="unavailable-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>Not available right now, for further information contact Destiny Trails customer care.</p>
+    </div>
+</div>
+
+<!-- Error Modal -->
+<div id="error-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>Please enter all the required information before proceeding.</p>
+    </div>
+</div>
+
+<!-- Unavailable Modal -->
+<div id="unavailable-modal" class="modal-Taxi">
+    <div class="modal-content-Taxi">
+        <span class="close-Taxi">&times;</span>
+        <p>Thank you for providing your details. Unfortunately, cabs are currently unavailable. We apologize for the inconvenience. For further assistance or more information, please contact Destiny Trails Customer Care.<br><br>We appreciate your understanding.</p>
+    </div>
+</div>
+    </section>
+</article>
+
+</div>
+
+<!--footer -->
+<footer class="footer">
+    <hr>
+    <p>Created By
+        <span>Ms Anisha Bhola</span> 
+        | All Rights Reserved!</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1309 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffedcc;
+        }
+        
+        header {
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            color: white;
+            background-color: #333;
+             justify-content: space-between; /* Space between logo and nav */
+              padding: 0.5rem 2rem; /* Adjust padding for better fit */
+        }
+
+       
+
+        header h1 {
+            font-size: 2rem;
+            font-family: MV Boli;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #55a630;
+        }
+
+        ::-webkit-scrollbar{
+            width: 0;
+          }
+
+        .logo{
+            height: 100px; /* Increase height of the logo */
+    width: auto; /* Keep the aspect ratio */
+    margin-right: 20px; /* Space between logo and title */
+        }  
+
+        .container {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+       .slider-container {
+            position: relative;
+            overflow: hidden;
+            overflow-x: scroll;
+       }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            justify-content: center;
+        }
+
+        .slide {
+            min-width: 300px;
+            margin: 0 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide:hover {
+            transform: translateY(-10px);
+        }
+
+        .slide img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .slide h3 {
+            font-size: 1.3rem;
+            color: #333;
+        }
+
+        .slide p {
+            color: #666;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .slider-nav.prev {
+            left: 10px;
+        }
+
+     .slider-nav.next {
+            right: 10px;
+        }
+
+        .book-btn {
+            background-color:  #ffa500;
+            color: #ffedcc ;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+            background-color:#55a630;
+            color: #ffa500;
+            border-color: #ffa500 ;
+        }
+
+        /* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .section {
+        padding: 0.5rem;
+    }
+
+    .slide {
+        min-width: 200px;
+        margin: 0 0.5rem;
+    }
+
+    .slider-nav {
+        padding: 0.3rem 0.8rem;
+    }
+
+    .book-btn {
+        padding: 0.4rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .slide h3 {
+        font-size: 1.1rem;
+    }
+
+    .slide p {
+        font-size: 0.9rem;
+    }
+
+    .book-btn {
+        padding: 0.3rem 0.8rem;
+    }
+}
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-family: MV Boli;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffa500;
+            margin: 1rem 0;
+        }
+
+        .HOTELS span,
+        .ESCORTS span,
+        .Travell span,
+        .HOMESTAYS span {
+            display: inline-block;
+            padding: 10px 15px;
+        
+            border-radius: 5px;
+        }
+
+        /* Background colors for hotel block */
+.HOTELS span:nth-child(1) { background-color:#ffedcc; }
+.HOTELS span:nth-child(2) { background-color: #ffedcc; }
+.HOTELS span:nth-child(3) { background-color:#ffedcc; }
+.HOTELS span:nth-child(4) { background-color: #ffedcc; }
+.HOTELS span:nth-child(5) { background-color: #ffedcc; }
+.HOTELS span:nth-child(6) { background-color:#ffedcc; }
+.HOTELS span:nth-child(7) { background-color:#ffedcc; }
+.HOTELS span:nth-child(9) { background-color:#ffedcc; }
+.HOTELS span:nth-child(10) { background-color:#ffedcc; }
+.HOTELS span:nth-child(11) { background-color:#ffedcc; }
+.HOTELS span:nth-child(12) { background-color:#ffedcc; }
+.HOTELS span:nth-child(13) { background-color:#ffedcc; }
+.HOTELS span:nth-child(14) { background-color:#ffedcc; }
+
+/* background colour for homestay block */
+.HOMESTAYS span:nth-child(1) { background-color:#ffedcc; }
+.HOMESTAYS span:nth-child(2) { background-color:#ffedcc; }
+.HOMESTAYS span:nth-child(3) { background-color:#ffedcc; }
+.HOMESTAYS span:nth-child(4) { background-color:#ffedcc; }
+.HOMESTAYS span:nth-child(5) { background-color:#ffedcc; }
+.HOMESTAYS span:nth-child(6) { background-color:#ffedcc; }
+.HOMESTAYS span:nth-child(7) { background-color:#ffedcc; }
+.HOMESTAYS span:nth-child(8) { background-color:#ffedcc; }
+
+
+
+/* tour guide heading designing*/
+.ESCORTS span:nth-child(1) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(2) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(3) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(4) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(6) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(7) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(8) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(9) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(10) { background-color:#ffedcc;}
+.ESCORTS span:nth-child(11) { background-color:#ffedcc;}
+
+/* for booking heading design */
+.Travell span:nth-child(1) { background-color:#ffedcc;}  
+.Travell span:nth-child(2) { background-color:#ffedcc;}
+.Travell span:nth-child(3) { background-color:#ffedcc;}
+.Travell span:nth-child(4) { background-color:#ffedcc;}
+.Travell span:nth-child(6) { background-color:#ffedcc;}
+.Travell span:nth-child(7) { background-color:#ffedcc;}
+.Travell span:nth-child(8) { background-color:#ffedcc;}
+.Travell span:nth-child(9) { background-color:#ffedcc;}
+.Travell span:nth-child(11) { background-color:#ffedcc;}
+.Travell span:nth-child(12) { background-color:#ffedcc;}
+.Travell span:nth-child(13) { background-color:#ffedcc;}
+.Travell span:nth-child(14) { background-color :#ffedcc;}
+.Travell span:nth-child(15) { background-color:#ffedcc;}
+.Travell span:nth-child(16) { background-color:#ffedcc;}
+
+<!-- styling for international trip hotels-->
+
+/* International Hotel Section */
+.International-Hotel {
+    font-family: Arial, sans-serif;
+    background-color: #006400;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* OuterBox - Hotel Section Layout */
+.OuterBox {
+    height: auto;
+    background-color: #008000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Hotel Image Styling */
+.Hotel-pic {
+    width: 65%;
+    height: 500px;
+    border-radius: 8px;
+    position: relative;
+    object-fit: cover;
+}
+
+/* Special Fares Section */
+.special-fares {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffedcc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Special Fares Heading */
+.special-fares h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Button Container for better alignment */
+.special-fares .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Adjusts spacing between buttons */
+}
+
+/* Special Fare Buttons */
+.special-fares button {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    margin: 8px 0; /* Adds margin above and below each button */
+    transition: all 0.3s ease-in-out;
+}
+
+.special-fares button:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for International Hotel Section */
+@media (max-width: 768px) {
+    .International-Hotel {
+        padding: 10px;
+    }
+
+    .OuterBox {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Hotel-pic {
+        width: 100%;
+        height: auto;
+    }
+
+    .special-fares {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .special-fares h2 {
+        font-size: 1.2em;
+    }
+
+    .special-fares button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}
+
+
+
+
+        .cta11 button{
+            background-color:  #ffa500;
+            color: #ffedcc ;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 1000px;
+            position: relative; /* Allows the use of 'top' property */
+            top: -880px; /* Move content upwards (negative value for 'top') */
+            width:200px;
+            left: 20%;
+        }
+
+        .cta11 button:hover{
+            background-color:#ffedcc;
+            color:#008000;
+            border-color: #008000;
+
+        }
+
+        .bank-offers {
+            margin: 20px 0;
+            background-color: #E0E0E0;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .bank-card {
+            text-align: center;
+            margin: 10px;
+        }
+
+        
+
+        .bank-card img {
+            max-width: 200px;
+            height: 100px;
+        }
+
+        .bank-card img:hover{
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    opacity: 1; /* Fully visible on hover */
+    cursor: pointer; /* Change cursor to pointer */
+
+        }
+
+        .bank-card p {
+            margin: 10px 0;
+            text-decoration: underline;
+        }
+
+        .cta1 {
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta1 button {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .cta1 button:hover {
+            background-color: red;
+        }
+
+        .footer1 {
+            margin-top: 20px;
+            color:#008000 ;
+            text-align: center;
+        }
+
+        .BTN1{
+            text-align: center;
+            
+        }
+
+        .BTN1 button{
+            font-size: medium;
+            background-color:  #ffa500;
+            color: #ffedcc ;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+
+        }
+
+        .BTN1 button:hover{
+            background-color:#55a630;
+            color: #ffa500;
+            border-color: #ffa500 ;
+        }
+
+        /* Responsive Design for Bank Offers Section */
+@media (max-width: 768px) {
+    .bank-offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bank-card {
+        margin: 10px 0;
+    }
+
+    .bank-card img {
+        max-width: 150px;
+        height: auto;
+    }
+}
+
+
+/* Flight Section Container */
+
+/* this is for javascript popup styling*/
+        const style = document.createElement('style');
+style.innerHTML = `
+  .error-border {
+    border: 2px solid red !important;
+  }
+  .search-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+
+document.head.appendChild(style);
+        
+        .flight-container {
+  background-color: #E0E0E0 !important; /* Gray Background */
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1200px; /* Increased width */
+  margin: 40px auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Booking Form */
+.flight-booking-form {
+  max-width: 100%; /* Increased width */
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  background:  #E0E0E0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Heading */
+.flight-booking-form h1 {
+  font-size: 42px;
+  color: #ff8c00; /* Deep Orange */
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+/* Trip Type */
+.trip-type {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.trip-type label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Form Fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Labels */
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Input Fields */
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.input:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 6px rgba(255, 140, 0, 0.5);
+  outline: none;
+}
+
+/* Travelers & Class Selection */
+.travelers-class {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.travelers-class label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Search Button */
+.search-button {
+  background: linear-gradient(45deg, #ffa500,#ff4500 );
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  margin-top: 20px;
+  color: #ffedcc;
+}
+
+.search-button:hover {
+  background: linear-gradient(45deg, #55a630, #55a630);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.3);
+  color: #ffa500;
+  border-color: #ffa500;
+}
+
+/* Responsive Design for Flight Booking Section */
+@media (max-width: 768px) {
+    .flight-container {
+        padding: 20px;
+    }
+
+    .flight-booking-form {
+        padding: 20px;
+    }
+
+    .trip-type {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+/* Train Booking Section */
+/* General Styles */
+
+/* Disable Search Button Initially */
+.search-btn:disabled {
+    background: gray;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Loading Effect */
+.search-btn.loading {
+    background: linear-gradient(45deg, #ff4500, #ffa500);
+    color: white;
+    cursor: progress;
+}
+
+.train {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+
+.Train-section {
+    background-color:  #E0E0E0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Slider Container */
+.slider-container {
+    background-color: ;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-item {
+    display: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-item.active {
+    display: block;
+}
+
+/* Slider Navigation */
+.slider-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.slider-navigation h2{
+    font-size: 3rem;
+    color: #ffa500;
+    text-align: center;
+    text-decoration: underline;
+    margin: 1rem 0;
+    font-family: 'MV Boli', sans-serif;
+    font-weight: bold;
+}
+
+.nav-btn {
+   background: linear-gradient(45deg, #ffa500, #ff4500);
+  color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+  transform: scale(1.05);
+  color:#ffa500;
+}
+
+/* Form Styling */
+.form-row-12 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-column-12 {
+    width: 48%;
+}
+
+.form-row-12 label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-row-12 select, input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-row-12 input:focus{
+    border-color: #ff8c00;
+    box-shadow: 0 0 6px rgba(255, 140, 0, 0.5);
+    outline: none;
+}
+
+.search-btn, #checkStatusBtn, #checkStatusBtn12 {
+    background: linear-gradient(45deg, #ffa500, #ff4500);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+
+.search-btn:hover, #checkStatusBtn:hover, #checkStatusBtn12:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+  transform: scale(1.05);
+  color:#ffa500;
+}
+
+.input-group00{
+    margin-bottom: 5PX;
+    padding-bottom: 5PX;
+}
+
+.input-group00:focus{
+    border-color: #ff8c00;
+    box-shadow: 0 0 6px rgba(255, 140, 0, 0.5);
+    outline: none;
+}
+
+
+/* Responsive Design for Train Booking Section */
+@media (max-width: 768px) {
+    .Train-section {
+        padding: 15px;
+    }
+
+    .slider-navigation h2 {
+        font-size: 2rem;
+    }
+
+    .form-row-12 {
+        flex-direction: column;
+    }
+
+    .form-column-12 {
+        width: 100%;
+    }
+
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+
+
+<!--busSection-->
+.bus-section {
+    font-family: Arial, sans-serif;
+    background-color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.Bus {
+    background-color: #E0E0E0;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: auto; /* Added max-width for better responsiveness */
+    margin: 0 auto;
+}
+
+.Bus h2 {
+    font-size: 4rem;
+    color: #ffa500;
+    text-align: center;
+    text-decoration: underline;
+    margin: 1rem 0;
+    font-family: 'MV Boli', sans-serif;
+    font-weight: bold;
+}
+
+.Bus-booking-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Bus-trip-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.trip-option {
+    background-color: #333333;
+    color: #ffa500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 48%;
+}
+
+.trip-option.active {
+    background-color: #333333;
+    color: #ffa500;
+}
+
+.trip-option:hover {
+    background-color: #0056b3;
+}
+
+.group-travel {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center; /* Center the items horizontally */
+    font-size: 20px;
+}
+
+.group-travel label, .bus-option label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.group-travel input, .bus-option input {
+    margin-right: 10px;
+}
+
+.location-inputs, .date-time {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.input-field label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-field input, .input-field select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.input-field input:focus, .input-field select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#explore-cabs {
+    background: linear-gradient(45deg, #ffa500, #ff7b00);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#explore-cabs:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Button Styling */
+.explore-buses {
+    background: linear-gradient(45deg, #ffa500, #ff7b00);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-buses:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
+}
+
+/* Responsive Design for Bus Booking Section */
+@media (max-width: 768px) {
+    .Bus {
+        padding: 20px;
+    }
+
+    .Bus h2 {
+        font-size: 2.5rem;
+    }
+
+    .Bus-trip-type {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .trip-option {
+        width: 100%;
+    }
+
+    .group-travel {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .location-inputs, .date-time {
+        flex-direction: column;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+}
+
+ /*cabs*/
+
+ .Taxii {
+    
+    padding: 20px;
+    border-radius: 10px;
+    max-width:auto;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.Txi-container {
+    background-color:#E0E0E0; /* Light gray background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+   /* max-width:; /* Added max-width for better responsiveness */
+}
+
+/* Heading for Cabs */
+.Txi-container::before {
+    content: "Cabs";
+    display: block;
+  margin-bottom: 15px;
+    font-size: 4rem;
+    color: #ffa500;
+    text-align: center;
+    text-decoration: underline;
+    margin: 1rem 0;
+    font-family: 'MV Boli', sans-serif;
+    font-weight: bold;
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color:#333333; /* Dark gray */
+    color: #ffa500;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    flex: 1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tab.active {
+    background-color: #333333;
+    color: #ffa500;
+}
+
+.tab:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styling */
+.search-form11 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+.input-group11 {
+    text-align: left;
+}
+
+.input-group11 label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group11 select,
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Hidden Drop Fields */
+.hidden {
+    display: none;
+}
+
+/* Search Button */
+.search-button11 {
+    background: linear-gradient(45deg, #ffa500, #ff7b00);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.search-button11:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
+}
+
+.search-button12{
+    background: linear-gradient(45deg, #ffa500, #ff7b00);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.search-button12:hover{
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
+}
+
+
+/* Responsive Design for Cabs Section */
+@media (max-width: 768px) {
+    .Taxii {
+        padding: 15px;
+    }
+
+    .Txi-container::before {
+        font-size: 2.5rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tab {
+        width: 100%;
+    }
+
+    .search-button11 {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+/* Modal Styles */
+.modal-Taxi {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-Taxi {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close-Taxi {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-Taxi:hover,
+.close-Taxi:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*footer*/
+.footer {
+    background-color: #2c2c2c; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
+    
+.footer hr {
+    border: 0;
+    border-top: 1px solid #555; /* Light grey horizontal line */
+    margin-bottom: 10px;
+}
+
+.footer span {
+    color: #ffa500; /* Highlighted name */
+    font-weight: bold;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .footer span {
+        font-size: 16px;
+    }
+}
+    
