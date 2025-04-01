@@ -6,17 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destiny Trails</title>
-    <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
-<script src="firebase-config.js"></script>
-<script defer src="auth.js"></script>
-
-
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="image/png"  href="Images/fevicon.png">
@@ -26,8 +15,6 @@
 
 <body>
     <header>
-       
-
         <div id="menu-bar" class="fas fa-bars"></div>
         <a href="index.html" class="logo"><img src="Images\fevicon.png" alt="logo"></a>
         <nav class="navbar">
@@ -39,11 +26,16 @@
             <a href="#review" onclick="showReviewForm()">review</a>
             <a href="#contact">contact</a>
             <a href="Travel-Insurance.html" target="_blank">Travel Insurance</a>
-
         </nav>
+        
         <div class="icons">
             <i class="fas fa-search" id="search-btn"></i>
-            <i class="fas fa-user" id="login-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>  
+            <div class="user-info">
+                <img id="user-avatar" src="https://ui-avatars.com/api/?background=random" alt="User Avatar">
+                <span id="user-name">User Name</span>
+                <button class="logout-btn" id="logout-btn">Logout</button>
+            </div>
         </div>
          <!-- Search Bar -->
          <form action="https://www.google.com/search" method="GET" class="search-bar-container" target="_blank">
@@ -53,22 +45,43 @@
 
     </header>
 
-    <div class="login-form-container">
-        <i class="fas fa-times" id="form-close"></i>
-        
-        <form id="auth-form">
-            <h3 id="form-title">Login</h3>
-    
-            <input type="text" class="box" id="user-name" placeholder="Enter your name" style="display: none;">
-            <input type="email" class="box" id="login-email" placeholder="Enter your email">
-            <input type="password" class="box" id="login-password" placeholder="Enter your password">
-    
-            <input type="submit" value="Login Now" class="btn" id="login-submit">
-            <button type="button" class="btn" id="google-signin">Sign in with Google</button>
-    
-            <p id="toggle-auth">Don't have an account? <a href="#">Register now</a></p>
-            <p>Forgot password? <a href="#" id="forgot-password">Click here</a></p>
-        </form>
+    <div class="main-container">
+        <div class="container">
+            <form id="login-form" class="form-container">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+                <button type="button" class="google-btn" id="google-signin">Sign in with Google</button>
+                <p class="toggle-text">
+                    Don't have an account? <a id="show-signup">Sign up</a>
+                </p>
+                <p class="forgot-password">
+                    <a id="forgot-password">Forgot Password?</a>
+                </p>
+            </form>
+
+            <form id="signup-form" class="form-container">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p class="toggle-text">
+                    Already have an account? <a id="show-login">Login</a>
+                </p>
+            </form>
+        </div>
     </div>
     <!-- home section starts  -->
 
@@ -859,8 +872,9 @@
 
     <!-- custom js file link  -->
      
-    <!-- <script src="js/firebase-config.js"></script>
-    <script src="js/auth.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
     <script src="js/script.js"></script>
     
 

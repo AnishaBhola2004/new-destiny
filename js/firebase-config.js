@@ -1,4 +1,4 @@
-// Your Firebase Configuration
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyD7iwEG3PAlxvFUn1yaEE8C4_DcMw7j8XA",
     authDomain: "destiny-trails-ea2d8.firebaseapp.com",
@@ -10,6 +10,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-    
