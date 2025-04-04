@@ -6,6 +6,7 @@
 ::-webkit-scrollbar{
   width: 0;
 }
+
 *{
   font-family: 'Nunito', sans-serif;
   margin:0; padding:0;
@@ -70,14 +71,12 @@ section{
 }
 
 header{
-  position: fixed;
-  top:0; left: 0; right:0;
+  position:sticky;
+  -webkit-sticky:sticky;
+  top:0; 
   background:#333;
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding:2rem 9%;
+  padding:1.5%;
 }
 
 header .logo{
@@ -89,7 +88,7 @@ header .logo{
 .logo img{
   position: absolute;
   left: 30px;
-  height: 200px;
+  height: 195px;
   top: -60px;
   width: 250px;
 }
@@ -98,6 +97,11 @@ header .logo span{
   color:var(--orange);
 }
 
+.navbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 header .navbar a{
   color:#fff;
   font-size: 2rem;
@@ -166,6 +170,10 @@ header .search-bar-container label:hover{
             z-index: 1000;
         }
 
+        #user-name{
+          color: #f8f8f8;
+          font-size: 1.5rem;
+        }
         .icons i {
             font-size: 24px;
             margin-left: 20px;
@@ -558,6 +566,7 @@ header .search-bar-container label:hover{
   background-color: #218838;
 }
 
+/* packages */
 .packages .box-container{
   display: flex;
   flex-wrap: wrap;
@@ -612,6 +621,14 @@ header .search-bar-container label:hover{
   color:#666;
   font-size: 1.5rem;
   text-decoration: line-through;
+}
+
+#btn1,#btn2,#btn3,#btn4,#btn5,#btn6 {
+  /* background-color: red;  */
+  display:block;  
+}
+#btn1{
+  margin:10px 0;
 }
 
 .services .box-container{
@@ -1305,6 +1322,7 @@ input[type="tel"] {
         display: initial;
     }
     
+    
     header .navbar{
         position: absolute;
         top:100%; right:0; left: 0;
@@ -1324,6 +1342,17 @@ input[type="tel"] {
       padding:1.5rem;
       margin:1.5rem 0;    
       background:#222;
+    }
+    header{
+      background-color: red;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     
 }
