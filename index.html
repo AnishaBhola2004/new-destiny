@@ -127,9 +127,7 @@
     <!-- home section ends -->
 
     <!-- book section starts  -->
-
     <section class="book" id="book">
-
         <h1 class="heading">
             <span>b</span>
             <span>o</span>
@@ -142,23 +140,18 @@
         </h1>
 
         <div class="row">
-
             <div class="image">
-                <img src="book-img.svg" alt="">
+                <img src="/book-img.svg" alt="">
             </div>
 
-            <form action="https://api.web3forms.com/submit" method="POST">
-
-                <!-- Replace with your Access Key -->
-                <input type="hidden" name="access_key" value="fb9721ed-fba4-4547-ad57-5ab22f540342">
-
+            <form id="bookingForm">
                 <div class="inputBox">
                     <h3>Where to</h3>
                     <input type="text" name="destination" placeholder="place name" required>
                 </div>
                 <div class="inputBox">
                     <h3>How many</h3>
-                    <input type="number" name="guests" placeholder="number of guests" required>
+                    <input type="number" name="guests" placeholder="number of guests" min="1" required>
                 </div>
                 <div class="inputBox">
                     <h3>Arrivals</h3>
@@ -170,17 +163,17 @@
                 </div>
                 <input type="submit" class="btn" value="Book Now">
             </form>
-
         </div>
-        <!-- Modal Structure -->
-<div id="successModal" class="modal-Book">
-    <div class="modal-content-Book">
-        <p>🎉 Your data has been successfully submitted! 🎉</p>
-        <button onclick="closeModal()">OK</button>
-    </div>
-</div>
 
+        <!-- Modal Structure -->
+        <div id="successModal" class="modal-Book">
+            <div class="modal-content-Book">
+                <p>🎉 Your data has been successfully submitted! 🎉</p>
+                <button onclick="closeModal()">OK</button>
+            </div>
+        </div>
     </section>
+
 
     <!-- book section ends -->
 
@@ -868,16 +861,22 @@
         <p class="credit">Created by <span>Ms. Anisha Bhola</span> | All Rights Reserved!</p>
     </footer>
     
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <!-- Font Awesome (replace with your actual kit code) -->
+   <script src="https://kit.fontawesome.com/abc123xyz.js" crossorigin="anonymous"></script>
 
-    <!-- custom js file link  -->
-     
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/script.js"></script>
-    
+<!-- Swiper JS (if you use it for sliders) -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Firebase SDKs (Compat version for easier browser use with firebase.auth(), firestore, etc.) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+
+<!-- Your Firebase Config & App Script -->
+<script src="js/firebase-config.js"></script>
+<script src="js/script.js"></script>
+<!-- Your custom Firebase config and logic -->
 
 </body>
 
