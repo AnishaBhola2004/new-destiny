@@ -297,7 +297,7 @@
 /* International Hotel Section */
 .International-Hotel {
     font-family: Arial, sans-serif;
-    background-color:#89a566;
+ 
     color: white;
     margin: 0;
     padding: 0;
@@ -306,7 +306,7 @@
 /* OuterBox - Hotel Section Layout */
 .OuterBox {
     height: auto;
-    background-color: #008000;
+    background: linear-gradient(45deg, #0066cc, #004080);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -533,6 +533,7 @@
 /* Flight Section Container */
 
 /* this is for javascript popup styling*/
+
         const style = document.createElement('style');
 style.innerHTML = `
   .error-border {

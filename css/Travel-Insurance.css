@@ -399,7 +399,7 @@ article {
     border-left-color: #ff4500;
 }
 
-
+/*packages container*/
 .Package {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
@@ -815,6 +815,44 @@ article {
     font-family: Arial, sans-serif;
 }
 */
+
+
+/*styling for form link*/
+
+/* Insurance Application Link */
+.form-link {
+    display: inline-block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #0066cc, #004080);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-link:hover {
+    background: linear-gradient(45deg, #004080, #0066cc);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.form-link::after {
+    content: "→";
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-link:hover::after {
+    margin-left: 15px;
+}
+
+/*styling for app banner*/
 .app-download {
     background: linear-gradient(135deg, #e0e0e0, #0d47a1);
     padding: 2rem 0;
@@ -823,7 +861,7 @@ article {
 }
 
 .app-download-container {
-    max-width: 1200px;
+    max-width:auto;
     margin: 0 auto;
     display: flex;
     gap: 2rem;

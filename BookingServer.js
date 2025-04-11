@@ -420,7 +420,8 @@ const touristGuides = [
 });
 
 
-// trainn
+//train
+
 document.addEventListener('DOMContentLoaded', function () {
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItems = document.querySelectorAll('.slider-item');
@@ -447,27 +448,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the first slide by default
     showSlide(currentIndex);
 
-    // Select form fields and buttons
-    const inputFields = document.querySelectorAll('.form-row-12 select, .form-row-12 input');
+    // Search Button Click Event - For Booking Form
     const searchButton = document.querySelector('.search-btn');
-    const checkStatusBtn = document.getElementById("checkStatusBtn");
-    const checkStatusBtn12 = document.getElementById("checkStatusBtn12");
-
-    // Function to check if all required fields are filled
-    function validateFields() {
-        let allFieldsFilled = true;
-        inputFields.forEach((input) => {
-            if (!input.value.trim()) {
-                allFieldsFilled = false;
-                input.classList.add('error-border'); // Highlight empty fields
-            } else {
-                input.classList.remove('error-border'); // Remove highlight if filled
-            }
-        });
-        return allFieldsFilled;
-    }
-
-    // Random responses for Search Button
     const searchResponses = [
         "No trains available for the selected route.",
         "Train schedule is being updated. Try again later.",
@@ -476,12 +458,26 @@ document.addEventListener('DOMContentLoaded', function () {
         "No results found for the selected date. Try a different date."
     ];
 
-    // Search Button Click Event
     searchButton.addEventListener('click', function (event) {
         event.preventDefault();
-
-        if (!validateFields()) {
-            alert('Complete all the information, please.');
+        
+        // Get all required fields in the current active form
+        const activeForm = document.querySelector('.slider-item.active');
+        const requiredFields = activeForm.querySelectorAll('select, input[type="date"], input[required]');
+        
+        let allFieldsValid = true;
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('error-border');
+                allFieldsValid = false;
+            } else {
+                field.classList.remove('error-border');
+            }
+        });
+        
+        if (!allFieldsValid) {
+            alert('Please complete all the required information.');
             return;
         }
 
@@ -500,38 +496,98 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Check PNR Status Button Click Event
+    const checkStatusBtn = document.getElementById("checkStatusBtn");
     if (checkStatusBtn) {
-        checkStatusBtn.addEventListener("click", function () {
+        checkStatusBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+            
             const pnrNumber = document.getElementById("pnrNumber").value;
             const travelDate = document.getElementById("pnrTravelDate").value;
 
             if (!pnrNumber || pnrNumber.length !== 10) {
+                document.getElementById("pnrNumber").classList.add('error-border');
                 alert("PNR number must be 10 digits.");
                 return;
+            } else {
+                document.getElementById("pnrNumber").classList.remove('error-border');
             }
 
             if (!travelDate) {
+                document.getElementById("pnrTravelDate").classList.add('error-border');
                 alert("Please select a travel date.");
                 return;
+            } else {
+                document.getElementById("pnrTravelDate").classList.remove('error-border');
             }
 
-            alert("Not available right now.");
+            // Show loading state
+            checkStatusBtn.textContent = "Checking...";
+            checkStatusBtn.classList.add("loading");
+
+            setTimeout(() => {
+                alert("PNR Status: Confirmed (Berth: B3, 45)");
+                checkStatusBtn.textContent = "Check Status";
+                checkStatusBtn.classList.remove("loading");
+            }, 2000);
         });
-    } else {
-        console.error("Check Status button not found!");
     }
 
     // Live Train Status Button Click Event
+    const checkStatusBtn12 = document.getElementById("checkStatusBtn12");
     if (checkStatusBtn12) {
-        checkStatusBtn12.addEventListener("click", function () {
-            if (!validateFields()) {
-                alert('Complete all the information, please.');
+        checkStatusBtn12.addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            const trainNumber = document.getElementById("trainNumber").value;
+            const station = document.getElementById("station").value;
+            const trainDate = document.getElementById("trainDate").value;
+            
+            let allFieldsValid = true;
+            
+            if (!trainNumber) {
+                document.getElementById("trainNumber").classList.add('error-border');
+                allFieldsValid = false;
+            } else {
+                document.getElementById("trainNumber").classList.remove('error-border');
+            }
+            
+            if (!station) {
+                document.getElementById("station").classList.add('error-border');
+                allFieldsValid = false;
+            } else {
+                document.getElementById("station").classList.remove('error-border');
+            }
+            
+            if (!trainDate) {
+                document.getElementById("trainDate").classList.add('error-border');
+                allFieldsValid = false;
+            } else {
+                document.getElementById("trainDate").classList.remove('error-border');
+            }
+            
+            if (!allFieldsValid) {
+                alert('Please complete all the required information.');
                 return;
             }
-            alert("Not available right now.");
+
+            // Show loading state
+            checkStatusBtn12.textContent = "Checking...";
+            checkStatusBtn12.classList.add("loading");
+
+            setTimeout(() => {
+                const statusMessages = [
+                    "Train #" + trainNumber + " is running on time.",
+                    "Train #" + trainNumber + " is delayed by 45 minutes.",
+                    "Train #" + trainNumber + " has departed from " + station + " on time.",
+                    "Train #" + trainNumber + " is expected to arrive at " + station + " in 30 minutes."
+                ];
+                const randomMessage = statusMessages[Math.floor(Math.random() * statusMessages.length)];
+                alert(randomMessage);
+                
+                checkStatusBtn12.textContent = "CHECK STATUS";
+                checkStatusBtn12.classList.remove("loading");
+            }, 2000);
         });
-    } else {
-        console.error("Live Train Status button not found!");
     }
 });
 
@@ -541,7 +597,9 @@ style.innerHTML = `
   .error-border {
     border: 2px solid red !important;
   }
-  .search-btn.loading {
+  .search-btn.loading,
+  #checkStatusBtn.loading,
+  #checkStatusBtn12.loading {
     background: linear-gradient(45deg, #ff4500, #ffa500);
     color: white;
     cursor: progress;
