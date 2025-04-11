@@ -170,3 +170,100 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+
+
+// search bar 
+// Toggle search bar when clicking search icon
+document.getElementById('search-btn').addEventListener('click', function() {
+    document.querySelector('.search-bar-container').classList.toggle('active');
+    
+    // Focus on input field when shown
+    if (document.querySelector('.search-bar-container').classList.contains('active')) {
+        document.getElementById('search-bar').focus();
+    }
+});
+
+// Close search bar when clicking outside
+document.addEventListener('click', function(event) {
+    const searchContainer = document.querySelector('.search-bar-container');
+    const searchBtn = document.getElementById('search-btn');
+    
+    if (!searchContainer.contains(event.target) && event.target !== searchBtn) {
+        searchContainer.classList.remove('active');
+    }
+});
+
+
+// Video Interaction
+const videoBtns = document.querySelectorAll(".vid-btn");
+const videoElement = document.getElementById("video-slider");
+
+videoBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+        document.querySelector(".controls .active")?.classList.remove("active");
+        this.classList.add("active");
+        const newSrc = this.getAttribute("data-src");
+
+        if (newSrc && videoElement) {
+            videoElement.src = newSrc;
+            videoElement.load();
+            videoElement.play().catch(e => console.log("Autoplay prevented:", e));
+        }
+    });
+});
+
+
+//modals
+document.addEventListener('DOMContentLoaded', function() {
+    // Modal Elements
+    const discoverBtn = document.querySelector(".home .button");
+    const modal = document.querySelector("#travelModal");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Open/Close Modal Functions
+    const openModal = () => modal && (modal.style.display = "flex");
+    const closeTravelModal = () => modal && (modal.style.display = "none");
+
+    // Modal Event Listeners
+    discoverBtn?.addEventListener("click", (event) => {
+        event.preventDefault();
+        openModal();
+    });
+
+    closeBtn?.addEventListener("click", closeTravelModal);
+
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) closeTravelModal();
+    });
+});
+
+
+ // Swiper Slider Initialization
+ const initSwiper = () => {
+    if (typeof Swiper === "undefined") return;
+
+    new Swiper(".review-slider", {
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 2500, disableOnInteraction: false },
+        breakpoints: {
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+        },
+    });
+
+    new Swiper(".brand-slider", {
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 2500, disableOnInteraction: false },
+        breakpoints: {
+            450: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            991: { slidesPerView: 4 },
+            1200: { slidesPerView: 5 },
+        },
+    });
+};
+
+initSwiper();

@@ -1,0 +1,960 @@
+
+<html>
+    <head>
+        <style>
+            /* Calculator Section */
+.calculator-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background:#ffedcc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.calculator-section h2{
+    text-align: center;
+    font-size: 60px;
+}
+
+.calculator-section p{
+ text-align: center;
+ font-size:30px ;
+}
+.calculator-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.calculator-form {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.calculator-results {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Sections */
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-section h3 span {
+    background: #ffa500;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.number-input {
+    display: flex;
+    align-items: center;
+}
+
+.number-input button {
+    background: #f1f1f1;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.number-input input {
+    width: 60px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+/* Coverage Toggle */
+.coverage-toggle {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.coverage-toggle .toggle-btn {
+    flex: 1;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #7f8c8d;
+}
+
+.coverage-toggle .toggle-btn.active {
+    background: #ffa500;
+    color: white;
+}
+
+/* Coverage Plans */
+.coverage-plan {
+    display: none;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.coverage-plan.active {
+    display: block;
+}
+
+.coverage-plan h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.coverage-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.coverage-plan li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.coverage-plan li:last-child {
+    border-bottom: none;
+}
+
+/* Custom Options */
+.custom-options .option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.custom-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.coverage-amount {
+    display: flex;
+    align-items: center;
+}
+
+.coverage-amount input {
+    width: 100px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Navigation Buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.next-btn, .back-btn, .calculate-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.next-btn, .calculate-btn {
+    background: linear-gradient(45deg, #ffa500, #ff4500);
+    color: white;
+}
+
+.back-btn {
+    background: linear-gradient(45deg, #ffa500, #ff4500);
+    color:white;
+}
+
+/* Results Panel */
+.results-placeholder {
+    text-align: center;
+    color: #7f8c8d;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    color: #bdc3c7;
+    margin-bottom: 1rem;
+}
+
+.results-content {
+    width: 100%;
+}
+
+.plan-comparison {
+    margin-bottom: 2rem;
+}
+
+.price-summary {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.total-price {
+    margin-bottom: 1rem;
+}
+
+.total-price .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.buy-now-btn, .save-quote-btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.buy-now-btn {
+    background: #27ae60;
+    color: white;
+}
+
+
+.save-quote-btn {
+    background:#27ae60 ;
+    color: white;
+}
+
+.buy-now-btn:hover, .save-quote-btn:hover{
+    background: linear-gradient(45deg, #ffa500, #ff4500)!important;
+    color: #fff !important;
+}
+
+/* Features */
+.calculator-features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 1.5rem;
+}
+
+.feature {
+    text-align: center;
+    flex: 1;
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: #ffa500;
+    margin-bottom: 1rem;
+}
+
+.feature h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .calculator-container {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .calculator-features {
+        flex-direction: column;
+    }
+}
+
+/* Hover Effects */
+.next-btn:hover, 
+.calculate-btn:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
+}
+
+
+
+.form-group input:focus, .form-group select:focus {
+    border-color:#ff4500;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+
+.calculator-form, .calculator-results {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.form-section.active {
+    border-left: 4px solid #ff4500;
+    padding-left: 1.5rem;
+}
+
+
+.number-input button:hover {
+    background: #ddd;
+}
+
+.number-input input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.price-summary {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+.total-price .price {
+    color: #27ae60;
+}
+
+.select-plan{
+    background: #ffa500;
+    color: white;
+    border: none;
+}
+ /*modal styling*/
+
+ .modal-Insurance {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content-Insurance {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .modal-content-Insurance h2 {
+            font-size: 24px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content-Insurance p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+.next-btn:hover,
+.calculate-btn:hover,
+.back-btn:hover {
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
+}
+
+            </style>
+
+            <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Form navigation
+    const formSections = document.querySelectorAll('.form-section');
+    let currentSection = 0;
+    
+    // Show first section
+    formSections[currentSection].classList.add('active');
+    
+    // Next button functionality
+    document.querySelectorAll('.next-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (validateSection(currentSection)) {
+                formSections[currentSection].classList.remove('active');
+                currentSection++;
+                formSections[currentSection].classList.add('active');
+                updateProgress();
+            }
+        });
+    });
+    
+    // Back button functionality
+    document.querySelectorAll('.back-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            formSections[currentSection].classList.remove('active');
+            currentSection--;
+            formSections[currentSection].classList.add('active');
+            updateProgress();
+        });
+    });
+    
+    // Coverage plan toggle
+    const planButtons = document.querySelectorAll('.toggle-btn');
+    const plans = document.querySelectorAll('.coverage-plan');
+    
+    planButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Update active button
+            planButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show corresponding plan
+            const planType = this.dataset.plan;
+            plans.forEach(plan => {
+                plan.classList.remove('active');
+                if (plan.dataset.plan === planType) {
+                    plan.classList.add('active');
+                }
+            });
+        });
+    });
+    
+    // Number input controls
+    document.querySelectorAll('.increment').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const input = this.parentNode.querySelector('input');
+            input.value = parseInt(input.value) + 1;
+        });
+    });
+    
+    document.querySelectorAll('.decrement').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const input = this.parentNode.querySelector('input');
+            if (parseInt(input.value) > parseInt(input.min)) {
+                input.value = parseInt(input.value) - 1;
+            }
+        });
+    });
+    
+    // Calculate button
+    document.querySelector('.calculate-btn').addEventListener('click', function() {
+        if (validateSection(currentSection)) {
+            calculateQuote();
+        }
+    });
+    
+    // Form validation
+    function validateSection(sectionIndex) {
+        let isValid = true;
+        const currentForm = formSections[sectionIndex];
+        
+        // Simple validation - check required fields
+        const requiredInputs = currentForm.querySelectorAll('input[required], select[required]');
+        requiredInputs.forEach(input => {
+            if (!input.value) {
+                input.style.borderColor = 'red';
+                isValid = false;
+            } else {
+                input.style.borderColor = '#ddd';
+            }
+        });
+        
+        return isValid;
+    }
+    
+    // Calculate quote
+    function calculateQuote() {
+        // Get form values
+        const tripType = document.getElementById('trip-type').value;
+        const destination = document.getElementById('destination').value;
+        const departureDate = document.getElementById('departure-date').value;
+        const returnDate = document.getElementById('return-date').value;
+        const travelers = document.getElementById('travelers').value;
+        const tripCost = document.getElementById('trip-cost').value || 0;
+        const travelerAge = document.getElementById('traveler-age').value;
+        const residence = document.getElementById('traveler-residence').value;
+        const preExisting = document.querySelector('input[name="pre-existing"]:checked').value;
+        
+        // Get selected plan
+        const selectedPlan = document.querySelector('.toggle-btn.active').dataset.plan;
+        
+        // Calculate base price (simplified for demo)
+        let basePrice = 50; // Starting price
+        basePrice += (travelers * 25); // Per traveler
+        basePrice += (tripCost * 0.05); // Percentage of trip cost
+        
+        // Adjust for age
+        if (travelerAge > 60) basePrice *= 1.5;
+        if (travelerAge > 70) basePrice *= 1.5;
+        
+        // Adjust for plan type
+        if (selectedPlan === 'premium') basePrice *= 1.8;
+        if (selectedPlan === 'custom') basePrice *= 1.3;
+        
+        // Adjust for pre-existing conditions
+        if (preExisting === 'yes') basePrice *= 1.5;
+        
+        // Display results
+        displayResults(basePrice, selectedPlan);
+        
+        // Scroll to results
+        document.querySelector('.calculator-results').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Display results
+    function displayResults(price, planType) {
+        const resultsPlaceholder = document.querySelector('.results-placeholder');
+        const resultsContent = document.querySelector('.results-content');
+        const totalPriceElement = document.getElementById('total-price');
+        const planComparison = document.querySelector('.plan-comparison');
+        const coverageList = document.querySelector('.coverage-list');
+        
+        // Hide placeholder, show content
+        resultsPlaceholder.classList.add('hidden');
+        resultsContent.classList.remove('hidden');
+        
+        // Update price
+        totalPriceElement.textContent = price.toFixed(2);
+        
+        // Generate plan comparison
+        planComparison.innerHTML = '';
+        
+        // Standard plan
+        const standardPlan = createPlanCard('Standard', price * 0.7, [
+            'Emergency medical: $100,000',
+            'Medical evacuation: $250,000',
+            'Trip cancellation: 100% of trip cost',
+            'Baggage loss: $1,000'
+        ]);
+        planComparison.appendChild(standardPlan);
+        
+        // Premium plan
+        const premiumPlan = createPlanCard('Premium', price * 1.2, [
+            'Emergency medical: $500,000',
+            'Medical evacuation: $1,000,000',
+            'Trip cancellation: 150% of trip cost',
+            'Baggage loss: $3,000',
+            'Cancel for any reason (75% refund)',
+            '24/7 concierge service'
+        ]);
+        planComparison.appendChild(premiumPlan);
+        
+        // Update coverage list based on selected plan
+        coverageList.innerHTML = '';
+        let coverageItems = [];
+        
+        if (planType === 'standard') {
+            coverageItems = [
+                'Emergency medical expenses',
+                'Emergency medical evacuation',
+                'Trip cancellation/interruption',
+                'Lost or delayed baggage',
+                '24/7 emergency assistance'
+            ];
+        } else if (planType === 'premium') {
+            coverageItems = [
+                'Higher medical coverage limits',
+                'Cancel for any reason (CFAR)',
+                'Adventure sports coverage',
+                'Rental car damage protection',
+                'Identity theft protection',
+                '24/7 concierge service'
+            ];
+        } else {
+            coverageItems = [
+                'Customized medical coverage',
+                'Flexible cancellation options',
+                'Personalized assistance',
+                'Tailored to your specific needs'
+            ];
+        }
+        
+        coverageItems.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-check"></i> ${item}`;
+            coverageList.appendChild(li);
+        });
+    }
+    
+    // Create plan card for comparison
+    function createPlanCard(name, price, features) {
+        const card = document.createElement('div');
+        card.className = 'plan-card';
+        
+        const priceFormatted = price.toFixed(2);
+        
+        let featuresHTML = '';
+        features.forEach(feat => {
+            featuresHTML += `<li>${feat}</li>`;
+        });
+        
+        card.innerHTML = `
+            <h4>${name} Plan</h4>
+            <div class="plan-price">$${priceFormatted}</div>
+            <ul>${featuresHTML}</ul>
+            <button class="select-plan" style="background-color:#ffa500;" "color:#ff;">Select</button>
+        `;
+        
+        return card;
+    }
+    
+    // Update progress indicator
+    function updateProgress() {
+        // Could add a visual progress bar here
+    }
+
+
+
+});
+
+                </script>
+                </head>
+        <body>
+            <section class="calculator-section">
+                <h2 style="color:#ff4500">Find Your Perfect Travel Insurance Coverage</h2>
+                <p>Discover your travel protection match in just 30 seconds!</p>
+                
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <!-- Trip Details -->
+                        <div class="form-section active" id="trip-details">
+                            <h3><span>1</span> Tell us about your trip</h3>
+                            <div class="form-group">
+                                <label for="trip-type">Type of Trip</label>
+                                <select id="trip-type">
+                                    <option value="vacation">Vacation/Leisure</option>
+                                    <option value="business">Business</option>
+                                    <option value="study">Study Abroad</option>
+                                    <option value="adventure">Adventure Travel</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="destination">Destination(s)</label>
+                                <input type="text" id="destination" placeholder="Country or region">
+                                <small>Enter multiple destinations separated by commas</small>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="departure-date">Departure Date</label>
+                                    <input type="date" id="departure-date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="return-date">Return Date</label>
+                                    <input type="date" id="return-date">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="travelers">Number of Travelers</label>
+                                <div class="number-input">
+                                    <button class="decrement">-</button>
+                                    <input type="number" id="travelers" value="1" min="1" max="10">
+                                    <button class="increment">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="trip-cost">Total Trip Cost ($)</label>
+                                <input type="number" id="trip-cost" placeholder="Estimated total cost">
+                            </div>
+                            
+                            <button class="next-btn">Next: Select Coverage</button>
+                        </div>
+                        
+                        <!-- Coverage Options -->
+                        <div class="form-section" id="coverage-options">
+                            <h3><span>2</span> Choose your coverage</h3>
+                            
+                            <div class="coverage-toggle">
+                                <button class="toggle-btn active" data-plan="standard">Standard</button>
+                                <button class="toggle-btn" data-plan="premium">Premium</button>
+                                <button class="toggle-btn" data-plan="custom">Custom</button>
+                            </div>
+                            
+                            <div class="coverage-plans">
+                                <!-- Standard Plan -->
+                                <div class="coverage-plan active" data-plan="standard">
+                                    <h4>Standard Protection</h4>
+                                    <ul>
+                                        <li>✔ Emergency medical: $100,000</li>
+                                        <li>✔ Medical evacuation: $250,000</li>
+                                        <li>✔ Trip cancellation: 100% of trip cost</li>
+                                        <li>✔ Baggage loss: $1,000</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Premium Plan -->
+                                <div class="coverage-plan" data-plan="premium">
+                                    <h4>Premium Protection</h4>
+                                    <ul>
+                                        <li>✔ Emergency medical: $500,000</li>
+                                        <li>✔ Medical evacuation: $1,000,000</li>
+                                        <li>✔ Trip cancellation: 150% of trip cost</li>
+                                        <li>✔ Baggage loss: $3,000</li>
+                                        <li>✔ Cancel for any reason (75% refund)</li>
+                                        <li>✔ 24/7 concierge service</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Custom Plan -->
+                                <div class="coverage-plan" data-plan="custom">
+                                    <div class="custom-options">
+                                        <div class="option">
+                                            <label>
+                                                <input type="checkbox" name="medical" checked>
+                                                Medical Coverage
+                                                <span class="slider"></span>
+                                            </label>
+                                            <div class="coverage-amount">
+                                                <span>$</span>
+                                                <input type="number" value="100000" min="50000" step="10000">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="option">
+                                            <label>
+                                                <input type="checkbox" name="evacuation" checked>
+                                                Medical Evacuation
+                                                <span class="slider"></span>
+                                            </label>
+                                            <div class="coverage-amount">
+                                                <span>$</span>
+                                                <input type="number" value="250000" min="50000" step="10000">
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- More custom options -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button class="back-btn">Back</button>
+                                <button class="next-btn">Next: Traveler Details</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Traveler Details -->
+                        <div class="form-section" id="traveler-details">
+                            <h3><span>3</span> About the travelers</h3>
+                            
+                            <div class="traveler-form">
+                                <div class="form-group">
+                                    <label for="traveler-age">Primary Traveler Age</label>
+                                    <input type="number" id="traveler-age" min="1" max="99" value="30">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="traveler-residence">Country of Residence</label>
+                                    <select id="traveler-residence">
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <!-- More options -->
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pre-existing">Pre-existing Medical Conditions?</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="pre-existing" value="no" checked> No</label>
+                                        <label><input type="radio" name="pre-existing" value="yes"> Yes</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button class="back-btn">Back</button>
+                                <button class="calculate-btn">Calculate My Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Panel -->
+                    <div class="calculator-results">
+                        <div class="results-placeholder">
+                            <div class="placeholder-icon">
+                                <i class="fas fa-suitcase"></i>
+                            </div>
+                            <p>Complete the form to see your personalized quote and recommended plans</p>
+                        </div>
+                        
+                        <div class="results-content hidden">
+                            <h3>Your Recommended Plans</h3>
+                            <div class="plan-comparison">
+                                <!-- Plans will be dynamically inserted here -->
+                            </div>
+                            
+                            <div class="price-summary">
+                                <div class="total-price">
+                                    <span class="label">Estimated Price:</span>
+                                    <span class="price">$<span id="total-price">0</span></span>
+                                    <small>for entire trip</small>
+                                </div>
+                                <button class="buy-now-btn">Buy Now</button>
+                                <button class="save-quote-btn">Save Quote</button>
+
+                                <!-- Modal -->
+                            <div id="featureModal" class="modal-Insurance">
+                                <div class="modal-content-Insurance">
+                                       <span class="close-btn">&times;</span>
+                                    <h2>🚧 Oops! Feature Coming Soon 😅</h2>
+                                     <p>We're working on this feature. Please check back later! 🛠️✨</p>
+                                      </div>
+                                       </div>
+                            </div>
+
+                            
+  
+                            <div class="coverage-details">
+                                <h4>What's Included:</h4>
+                                <ul class="coverage-list">
+                                    <!-- Coverage items will be dynamically inserted here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-features">
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Comprehensive Coverage</h4>
+                        <p>Protection for medical emergencies, trip cancellations, lost baggage, and more</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-globe"></i>
+                        <h4>Worldwide Protection</h4>
+                        <p>Coverage in over 150 countries with 24/7 emergency assistance</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h4>Best Price Guarantee</h4>
+                        <p>We'll match any lower price you find for equivalent coverage</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <script>
+                //modal functionality
+                //modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById("featureModal");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Use event delegation in case buttons are dynamically added
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('buy-now-btn') || 
+            e.target.classList.contains('save-quote-btn')) {
+            modal.style.display = "flex";
+        }
+    });
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+              </script>
+        </body>
+  
+</html>

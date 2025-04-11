@@ -21,7 +21,7 @@
 
         header h1 {
             font-size: 2rem;
-            font-family: MV Boli;
+            
             margin: 0;
             flex-grow: 1;
         }
@@ -220,7 +220,7 @@
             justify-content: center;
             align-items: center;
             gap: 5px;
-            font-family: MV Boli;
+           
             font-size: 2rem;
             font-weight: bold;
             color: #ffa500;
@@ -297,7 +297,7 @@
 /* International Hotel Section */
 .International-Hotel {
     font-family: Arial, sans-serif;
-    background-color: #006400;
+    background-color:#89a566;
     color: white;
     margin: 0;
     padding: 0;
@@ -752,7 +752,7 @@ document.head.appendChild(style);
     text-align: center;
     text-decoration: underline;
     margin: 1rem 0;
-    font-family: 'MV Boli', sans-serif;
+   
     font-weight: bold;
 }
 
@@ -888,7 +888,7 @@ document.head.appendChild(style);
     text-align: center;
     text-decoration: underline;
     margin: 1rem 0;
-    font-family: 'MV Boli', sans-serif;
+ 
     font-weight: bold;
 }
 
@@ -1107,7 +1107,7 @@ document.head.appendChild(style);
     text-align: center;
     text-decoration: underline;
     margin: 1rem 0;
-    font-family: 'MV Boli', sans-serif;
+   
     font-weight: bold;
 }
 

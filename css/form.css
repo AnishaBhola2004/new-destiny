@@ -3,21 +3,35 @@
     width: 30%;
     border: none;
     border-radius: 15px;
+    background: transparent;
     
 }
-#login-form{
+
+/*#login-form{
     background: white;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
     width: 380px;
     text-align: center;
+}*/
+
+/* Form container styling */
+#login-form, #signup-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    width: 380px;
+    text-align: center;
+    margin: 0 auto; /* Center the form horizontally */
 }
 
 h2 {
     margin-bottom: 20px;
-    color: #ff6f00;
-    font-size: 24px;
+    text-decoration: underline;
+text-transform: capitalize;
+font-size: 24px;
     font-weight: bold;
 }
 
@@ -40,34 +54,52 @@ h2 {
     box-shadow: 0px 0px 8px rgba(255, 152, 0, 0.5);
 }
 
-button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 12px;
-    font-weight: bold;
-}
 
-button[type="submit"] {
+    button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 12px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ffa500, #ff7b00);
+        color: #fff;
+    }
+
+    button:hover {
+        background: linear-gradient(45deg, #55a630, #55a630);
+        transform: scale(1.05);
+        color: #ffa500;
+    }
+
+/*button[type="submit"] {
     background: #ff6f00;
     color: white;
 }
 
 button[type="submit"]:hover {
-    background: #e65100;
-}
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;}*/
 
 .google-btn {
-    background: #db4437;
-    color: white;
+    background: linear-gradient(45deg, #ffa500, #ff7b00);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .google-btn:hover {
-    background: #c1351d;
+    background: linear-gradient(45deg, #55a630, #55a630);
+    transform: scale(1.05);
+    color: #ffa500;
 }
 
 .toggle-text, .forgot-password {
@@ -76,7 +108,7 @@ button[type="submit"]:hover {
 }
 
 .toggle-text a, .forgot-password a {
-    color: #ff6f00;
+    color: linear-gradient(45deg, #ffa500, #ff7b00);;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -117,13 +149,14 @@ h2 {
     transition: 0.3s;
 }
 
-#login-email:focus, #login-password:focus, #signup-name:focus, #signup-email:focus, #signup-password:focus {
+/* Focus effects for input fields */
+#login-email:focus, #login-password:focus, 
+#signup-name:focus, #signup-email:focus, #signup-password:focus {
     border-color: #ff9800;
     outline: none;
     box-shadow: 0px 0px 8px rgba(255, 152, 0, 0.5);
 }
-
-button {
+/*button {
     width: 100%;
     padding: 14px;
     border: none;
@@ -144,14 +177,14 @@ button[type="submit"]:hover {
     background: #e65100;
 }
 
-.google-btn {
+/*.google-btn {
     background: #db4437;
     color: white;
 }
 
 .google-btn:hover {
     background: #c1351d;
-}
+}*/
 
 .toggle-text, .forgot-password {
     margin-top: 18px;
